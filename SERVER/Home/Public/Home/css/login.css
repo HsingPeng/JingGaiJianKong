@@ -1,0 +1,23 @@
+body,
+html {
+    font-family:"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+
+.form-horizontal {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.glyphicon {
+	top: 0 ;
+}
+
+form {
+	  text-align: center;
+}

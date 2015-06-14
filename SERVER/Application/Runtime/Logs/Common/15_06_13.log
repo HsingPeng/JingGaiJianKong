@@ -1,0 +1,84 @@
+[ 2015-06-13T18:35:18+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/Home/css/index.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:18+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/js/holder.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:18+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/js/jquery-1.11.3.min.js
+NOTIC: [2] mkdir(): File exists C:\xampp\htdocs\JianKong\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists C:\xampp\htdocs\JianKong\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists C:\xampp\htdocs\JianKong\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists C:\xampp\htdocs\JianKong\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:18+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/css/bootstrap.min.css
+NOTIC: [2] mkdir(): File exists C:\xampp\htdocs\JianKong\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+NOTIC: [2] mkdir(): File exists C:\xampp\htdocs\JianKong\ThinkPHP\Library\Think\Build.class.php 第 67 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:18+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/js/bootstrap.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:18+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/Home/js/index.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:38+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/Home/css/index.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:38+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/js/jquery-1.11.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:38+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/js/holder.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:38+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/js/bootstrap.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:38+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/Home/js/index.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T18:35:38+08:00 ] 192.168.99.225 /JianKong/__CONTROLLER__/Public/bootstrap/css/bootstrap.min.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:__CONTROLLER__
+
+[ 2015-06-13T22:14:58+08:00 ] 192.168.99.225 /JianKong/index.html?username=&password=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Index
+
