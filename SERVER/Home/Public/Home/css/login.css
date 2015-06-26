@@ -21,3 +21,8 @@ body {
 form {
 	  text-align: center;
 }
+
+.form-horizontal {
+	padding-left: 8px;
+	padding-right: 8px;
+}

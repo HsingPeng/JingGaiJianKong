@@ -1,11 +1,30 @@
 body {
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
 }
 
 body,
 html {
-    width: 100%;
-    height: 100%;
     font-family:"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+#lat,#lng {
+	text-align: center;
+	font-weight: 500;
+}
+
+#allmap {
+	height: 250px;
+}
+
+#load_modal {
+	z-index: 1060;
+}
+
+.modal-backdrop.in {
+	z-index: 1050;
+}
+
+.modal-backdrop.fade.in {
+	z-index: 1049;
 }

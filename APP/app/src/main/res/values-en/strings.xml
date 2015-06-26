@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">jiankong receiver</string>
+    <string name="action_clear">clear log</string>
+    <string name="action_settings">settings</string>
+    <string name="action_exit">run in background</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_delete_log_file">Confirm delete log file？</string>
+    <string name="service_started">service started</string>
+    <string name="service_stoped">service stoped</string>
+    <string name="service_running">service is running</string>
+    <string name="click_stop">stop</string>
+    <string name="click_open">open</string>
+    <string name="show_log_begin">LOG ></string>
+</resources>

@@ -34,10 +34,11 @@
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<ul class="nav navbar-nav navbar-left">
-					<li><a href="home.php?m=Home&c=Index&a=index">主页</a>
-					</li>
-					<li class="dropdown">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="home.php?m=Home&c=Index&a=index">主页</a>
+						</li>
+						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">管理<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="home.php?m=Home&c=Index&a=manage_1">井盖管理</a>
@@ -48,13 +49,13 @@
 								</li>
 							</ul>
 						</li>
-				</ul>
+					</ul>
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="home.php?m=Home&c=Index&a=login">登出</a>
-					</li>
-				</ul>
-
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="home.php?m=Home&c=Index&a=login">登出</a>
+						</li>
+					</ul>
+				</div>
 		</nav>
 		</div>
 

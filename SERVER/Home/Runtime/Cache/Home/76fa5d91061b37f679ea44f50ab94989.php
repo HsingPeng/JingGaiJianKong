@@ -119,7 +119,7 @@
 
 
 		<div class="table-responsive float-left">
-			<table id="table" class="table display dataTable table-hover" cellspacing="0">
+			<table id="table" class="display dataTable" cellspacing="0">
 				<thead>
 					<tr>
 						<th>设备ID</th>

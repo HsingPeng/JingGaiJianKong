@@ -3,7 +3,7 @@ return array(
 	//'配置项'=>'配置值'
 	
 	//让页面显示追踪日志信息
-    'SHOW_PAGE_TRACE'   => true,  
+    'SHOW_PAGE_TRACE'   => false,  
 	
     //url地址大小写不敏感设置
     'URL_CASE_INSENSITIVE'  =>  true,

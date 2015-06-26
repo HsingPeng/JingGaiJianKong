@@ -1,0 +1,6 @@
+[ 2015-06-16T00:37:24+08:00 ] ::1 /JianKong/ome.php?m=Home&c=UpDate&a=test2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+ERR: 无法加载模块:Ome
+
