@@ -1,6 +1,8 @@
 /*初始化数据*/
 function init() {
 
+	initNavBar();
+	
 	TABLE = initTable();
 	MODAL = 0;
 	addClick();
@@ -9,8 +11,12 @@ function init() {
 
 	addButton();
 
+}
 
-
+//点亮导航条位置
+function initNavBar(){
+	$('#nav_manage').addClass('active');
+	$('#nav_manage_jg').addClass('active');
 }
 
 function addButton() {
@@ -30,14 +36,14 @@ function addButton() {
 
 		MODAL = 1;
 
-		var uid = $("#USER_ID").attr("name");
+		var USER_ID = $("#USER_ID").attr("name");
 		
 		$('#input-id').val('自动生成');
 		$("#input-id").attr("disabled", true);
 		$('#safetime').val('');
 		$('#number').val('');
-		$('#uid').val(uid);
-		if(uid!=1){
+		$('#uid').val(USER_ID);
+		if(USER_ID!=1){
 			$("#uid").attr("disabled", true);
 		}
 		$('#lng').text('点击地图自动获取');

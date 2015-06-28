@@ -39,8 +39,8 @@
 	</div>
 	<!-- /.modal -->
 
-	<!-- 导航 -->
-
+	<!--调用导航模板-->
+		<!-- 导航 -->
 	<div class="container">
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -59,24 +59,24 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=index">实时地图</a>
+						<li id="nav_index"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=index">实时地图</a>
 						</li>
-						<li class="dropdown">
+						<li class="dropdown" id="nav_manage">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">管理<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_jg">井盖管理</a>
+								<li id="nav_manage_jg"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_jg">井盖管理</a>
 								</li>
-								<?php if(($_SESSION['kind']) == "1"): ?><li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_user">用户管理</a><?php endif; ?>
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_setting">当前设置</a>
+								<?php if(($_SESSION['kind']) == "1"): ?><li id="nav_manage_user"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_user">用户管理</a><?php endif; ?>
+								<li id="nav_history"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=history">历史记录</a>
 								</li>
 							</ul>
-							</li>
-							<li class="active"><a href="#">历史记录</a>
-							</li>
+						</li>
+						<li id="nav_setting"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=setting">设置</a>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a>
+							<a name="<?php echo (session('uid')); ?>" id="USER_ID">
 								<?php if(($_SESSION['kind']) == "1"): ?>超级管理员
 									<?php else: ?>普通管理员<?php endif; ?>：<?php echo (session('uname')); ?>&nbsp;&nbsp;ID:<?php echo (session('uid')); ?></a>
 						</li>
@@ -90,9 +90,10 @@
 
 		<!-- /.导航 -->
 
+
 		<div id="table_wrapper" class=" container dataTables_wrapper" role="grid">
 			<div class="row-fluid">
-				<div class="span6 myBtnBox"><a id="addFun" class="btn btn-primary">新增</a>
+				<div class="span6 myBtnBox"><a id="deleteALL" class="btn btn-warning">清空所有</a>
 				</div>
 				<!--<br>-->
 			</div>
@@ -105,6 +106,7 @@
 						<th>电压</th>
 						<th>角度</th>
 						<th>接收时间</th>
+						<th>操作</th>
 					</tr>
 				</thead>
 				<tbody>

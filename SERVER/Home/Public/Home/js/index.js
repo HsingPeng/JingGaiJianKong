@@ -243,9 +243,16 @@ function addClick2() {
 
 }
 
+//点亮导航条位置
+function initNavBar(){
+	$('#nav_index').addClass('active');
+}
+
 /*初始化数据*/
 function init() {
 
+	initNavBar();
+	
 	//模态 窗口
 	$('#load_modal').modal({
 		show: true, //显示

@@ -16795,3 +16795,768 @@ SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0040s ]
 SQL: SELECT `uid`,`uname`,`remark` FROM `admin` WHERE ( kind=2 )  [ RunTime:0.0000s ]
 NOTIC: [8] Undefined variable: result C:\xampp\htdocs\JianKong\Home\Home\Controller\ManageUserController.class.php 第 18 行.
 
+[ 2015-06-28T22:57:18+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503438652
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0010s ]
+
+[ 2015-06-28T22:59:24+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503564216
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:00:02+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503602311
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:00:33+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503633306
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:02:21+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503741179
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:02:34+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503753887
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:02:35+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435503755442
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record`  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:17:06+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504625865
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:17:08+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504628136
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:17:09+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504629756
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:17:11+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504631285
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:17:16+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504636667
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:17:21+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504641069
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:17:36+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504655865
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:22:13+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504933434
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:22:52+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435504972159
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:27:45+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505264982
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:28:06+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505286029
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:28:39+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' )  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:28:40+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505320687
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='2' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:28:55+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505320') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505320') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505321') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505321') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505322') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505322') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505323') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505323') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505324') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505324') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505325') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505325') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505326') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505326') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505327') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505327') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505328') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505328') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505329') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505329') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505330') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505330') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505331') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505331') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505332') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505332') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505333') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505333') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505334') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505334') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505335') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:28:39 ' OR ( type=1 AND validtime>'2015-06-28 23:28:39 ' AND validtime<'1435505335') ) )  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:29:01+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:29:03+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505343394
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='3' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:29:07+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435505347379
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' )  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:29:10+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505350145
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='3' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:29:12+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435505352253
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:29:18+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505342') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505343') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505343') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505344') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505344') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505345') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505345') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505346') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505346') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505347') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505347') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505348') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505348') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505349') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505349') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505350') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505350') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505351') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505351') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505352') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505352') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505353') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505353') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505354') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505354') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505355') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505355') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505356') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505356') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505357') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505357') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:29:01 ' OR ( type=1 AND validtime>'2015-06-28 23:29:01 ' AND validtime<'1435505358') ) )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:29:39+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:29:41+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505380928
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:29:43+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435505383550
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment`  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:29:53+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505393440
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:29:56+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:40 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:41 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:41 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:42 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:42 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:43 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:43 ') )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:44 ') )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:44 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:45 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:45 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:46 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:46 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:47 ') )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:47 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:48 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:48 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:49 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:49 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:50 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:50 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:51 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:51 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:52 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:52 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:53 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:53 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:54 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:54 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:55 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:55 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:29:39 ' OR ( type=1 AND validtime>'2015-06-28 23:29:39 ' AND validtime<'2015-06-28 23:29:56 ') )  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:31:16+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:18+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505477855
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0040s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='3' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:31:22+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:26+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505485938
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='3' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:33+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505477') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505478') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505478') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505479') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505479') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505480') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505480') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505481') ) )  [ RunTime:0.0040s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505481') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505482') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505482') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505483') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505483') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505484') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505484') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505485') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505485') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505486') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505486') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505487') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505487') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505488') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505488') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505489') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505489') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505490') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505490') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505491') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505491') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505492') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505492') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:16 ' OR ( type=1 AND validtime>'2015-06-28 23:31:16 ' AND validtime<'1435505493') ) )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:33+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435505493751
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:35+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505495106
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='3' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:38+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505482') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505483') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505483') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505484') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505484') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505485') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505485') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505486') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505486') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505487') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505487') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505488') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505488') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505489') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505489') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505490') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505490') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505491') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505491') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505492') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505492') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505493') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505493') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505494') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505494') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505495') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505495') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505496') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505496') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505497') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505497') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='3' AND ( time>='2015-06-28 23:31:22 ' OR ( type=1 AND validtime>'2015-06-28 23:31:22 ' AND validtime<'1435505498') ) )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:31:42+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505502621
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0040s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='3' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:32:33+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `equipment`  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:32:41+08:00 ] ::1 /JianKong/home.php?m=Home&c=Setting&a=updateAdmin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `admin` WHERE ( uid='1' AND upassword='827ccb0eea8a706c4c34a16891f84e7b' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `admin` SET `uname`='admin',`upassword`='e10adc3949ba59abbe56e057f20f883e',`remark`='超级' WHERE ( uid='1' ) [ RunTime:0.0040s ]
+
+[ 2015-06-28T23:32:45+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505565319
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:32:49+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:34 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:34 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:35 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:35 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:36 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:36 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:37 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:37 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:38 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:38 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:39 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:39 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:40 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:40 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:41 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:41 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:42 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:42 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:43 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:43 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:44 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:44 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:45 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:45 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:46 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:46 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:47 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:47 ') )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:48 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:48 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:49 ') )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( time>='2015-06-28 23:32:33 ' OR ( type=1 AND validtime>'2015-06-28 23:32:33 ' AND validtime<'2015-06-28 23:32:49 ') )  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:33:32+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505612044
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:34:22+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505661480
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:35:20+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435505720718
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:35:22+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageUser&a=retrieve&_=1435505722268
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`uname`,`remark` FROM `admin` WHERE ( kind=2 )  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: result C:\xampp\htdocs\JianKong\Home\Home\Controller\ManageUserController.class.php 第 18 行.
+
+[ 2015-06-28T23:35:27+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505727229
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:35:35+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505735071
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:37:57+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505877780
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:39:46+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435505986028
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:40:06+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506006379
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:40:15+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506015182
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:41:09+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506069162
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:41:57+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageUser&a=retrieve&_=1435506116965
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`uname`,`remark` FROM `admin` WHERE ( kind=2 )  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: result C:\xampp\htdocs\JianKong\Home\Home\Controller\ManageUserController.class.php 第 18 行.
+
+[ 2015-06-28T23:41:58+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435506118261
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:42:00+08:00 ] ::1 /JianKong/home.php?m=Home&c=ManageJG&a=retrieve&_=1435506120237
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `equipment`  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:42:09+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506129457
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:47:50+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506470495
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:49:20+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506560276
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:49:35+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: DELETE FROM `record` WHERE ( rid='4' ) [ RunTime:0.0030s ]
+
+[ 2015-06-28T23:49:36+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506560277
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:49:43+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: DELETE FROM `record` WHERE ( rid='17' ) [ RunTime:0.0170s ]
+
+[ 2015-06-28T23:49:43+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506560278
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:54:35+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: DELETE FROM `record` WHERE ( rid='5' ) [ RunTime:0.0070s ]
+
+[ 2015-06-28T23:54:35+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506560279
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `record` ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:54:58+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' )  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:54:59+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506899699
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='2' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:55:03+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0070s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'eq,record re WHERE ( eq.uid='2' AND eq.id=re.id AND eq.rid='7' )' at line 1
+
+[ 2015-06-28T23:55:14+08:00 ] ::1 /JianKong/home.php?m=Home&c=GetCurrent&a=getcurrent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506899') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506899') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506900') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506900') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506901') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506901') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506902') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506902') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506903') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506903') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506904') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506904') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506905') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506905') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506906') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506906') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506907') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506907') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506908') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506908') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506909') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506909') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506910') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506910') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506911') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506911') ) )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506912') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506912') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506913') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506913') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506914') ) )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `equipment` WHERE ( uid='2' AND ( time>='2015-06-28 23:54:58 ' OR ( type=1 AND validtime>'2015-06-28 23:54:58 ' AND validtime<'1435506914') ) )  [ RunTime:0.0000s ]
+
+[ 2015-06-28T23:55:21+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'eq,record re WHERE ( eq.uid='2' AND eq.id=re.id AND eq.rid='7' )' at line 1
+
+[ 2015-06-28T23:56:38+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=retrieve&_=1435506998298
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0060s ]
+SQL: SELECT * FROM equipment eq,record re WHERE ( eq.uid='2' AND eq.id=re.id ) ORDER BY rid desc  [ RunTime:0.0010s ]
+
+[ 2015-06-28T23:56:42+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0070s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'eq,record re WHERE ( eq.uid='2' AND eq.id=re.id AND re.rid='7' )' at line 1
+
+[ 2015-06-28T23:56:53+08:00 ] ::1 /JianKong/home.php?m=Home&c=History&a=delete
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'eq,record re WHERE ( eq.uid='2' AND eq.id=re.id AND re.rid='7' )' at line 1
+

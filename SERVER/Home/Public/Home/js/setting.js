@@ -2,9 +2,13 @@
 function init() {
 
 	addClick();
+	initNavBar();
+	
+}
 
-
-
+//点亮导航条位置
+function initNavBar(){
+	$('#nav_setting').addClass('active');
 }
 
 function addClick() {

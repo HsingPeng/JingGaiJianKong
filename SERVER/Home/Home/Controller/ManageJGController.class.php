@@ -83,7 +83,10 @@ class ManageJGController extends BaseController {
 			$lat = I('post.lat',0,'float');
 			$address = I('post.address','','string');
 			$describe = I('post.describe','','string');
-			$uid = I('post.uid',0,'intval');
+			$safetime = I('post.safetime',0,'intval');
+			if(session("kind")==1){
+				$uid = I('post.uid',0,'intval');
+			}
 			
 			$Equip = M('Equipment');
 			$old_data = $Equip->where("id='%d'",array($id))->select();
@@ -97,6 +100,7 @@ class ManageJGController extends BaseController {
 			$data['lng'] = $lng;
 			$data['lat'] = $lat;
 			$data['address'] = $address;
+			$data['safetime'] = $safetime;
 			$data['describe'] = $describe;
 			if(session("kind")!=1){
 				$uid = session("uid");
@@ -125,7 +129,7 @@ class ManageJGController extends BaseController {
 			$id = I('post.id',0,'intval');
 
 			$Equip = M('Equipment');
-			$old_data = $Equip->where("id='%d'",array($id))->delete();
+			$Equip->where("id='%d'",array($id))->delete();
 
 			$result["data"] = "success" ;
 			$this->ajaxReturn ($result,'JSON');
