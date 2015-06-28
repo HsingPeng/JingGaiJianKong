@@ -2,13 +2,21 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class ManageController extends Controller {
+class ManageController extends BaseController {
 	
 	//查询
     public function retrieve(){
 		
+		$uid = session("uid");
+		$kind = session("kind");
+		
 		$Equip = M('Equipment');
-		$data = $Equip->select();
+		if($kind==1){
+			$data = $Equip->select();
+		}else{
+			$data = $Equip->where("uid='%d'",array($uid))->select();
+		}
+		
 		$result["data"] = $data ;
 		$this->ajaxReturn ($result,'JSON');
 		
@@ -19,36 +27,42 @@ class ManageController extends Controller {
 		
 		try {
 			
-			$id = I('post.id',0,'intval');
+			$safetime = I('post.safetime',0,'intval');
 			$number = I('post.number','','string');
 			$lng = I('post.lng',0,'float');
 			$lat = I('post.lat',0,'float');
 			$address = I('post.address','','string');
 			$describe = I('post.describe','','string');
-
-			if($id < 1){
-				$result["data"] = "设备ID错误" ;
+			$uid = I('post.uid',0,'intval');
+			
+			if($safetime < 3600){
+				$result["data"] = "心跳时间过短" ;
 				$this->ajaxReturn ($result,'JSON');
 			}
 
 			$Equip = M('Equipment');
-			$old_data = $Equip->where("id='%d'",array($id))->select();
+			
+			/*$old_data = $Equip->where("id='%d'",array($id))->select();
 			if(count($old_data)){
 				$result["data"] = "设备ID已存在" ;
 				$this->ajaxReturn ($result,'JSON');
-			}
+			}*/
 
-			$data['id'] = $id;
+			$data['safetime'] = $safetime;
 			$data['number'] = $number;
 			$data['lng'] = $lng;
 			$data['lat'] = $lat;
 			$data['address'] = $address;
 			$data['describe'] = $describe;
+			if(session("kind")!=1){
+				$uid = session("uid");
+			}
+			$data['uid'] = $uid;
 
-
-			$Equip->data($data)->add();
-
+			$id = $Equip->data($data)->add();
+			
 			$result["data"] = "success" ;
+			$result["id"] =$id ;
 			$this->ajaxReturn ($result,'JSON');
 			
 		} catch (Exception $e) {
@@ -69,7 +83,8 @@ class ManageController extends Controller {
 			$lat = I('post.lat',0,'float');
 			$address = I('post.address','','string');
 			$describe = I('post.describe','','string');
-
+			$uid = I('post.uid',0,'intval');
+			
 			$Equip = M('Equipment');
 			$old_data = $Equip->where("id='%d'",array($id))->select();
 			if(count($old_data)==0){
@@ -83,7 +98,11 @@ class ManageController extends Controller {
 			$data['lat'] = $lat;
 			$data['address'] = $address;
 			$data['describe'] = $describe;
-
+			if(session("kind")!=1){
+				$uid = session("uid");
+			}
+			$data['uid'] = $uid;
+			
 
 			$Equip->where("id='%d'",array($id))->save($data);
 

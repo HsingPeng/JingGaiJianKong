@@ -21,13 +21,14 @@ function show_bug($msg){
 }
 
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
-define('APP_DEBUG',True);
+define('APP_DEBUG',true);
 
 // 定义应用目录
 define('APP_PATH','./Home/');
 
 define("MEDIA_URL",APP_PATH."Public/");
 
+define("APP_URL","home.php");
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';

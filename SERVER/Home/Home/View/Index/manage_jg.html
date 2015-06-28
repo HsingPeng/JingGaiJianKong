@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<!doctype html>
 <html lang="zh-cn">
 
 <head>
@@ -8,14 +8,16 @@
 
 	<title>井盖管理</title>
 
-	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>Home/css/manage_1.css" class="stylesheet">
-	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>bootstrap/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="{$Think.const.MEDIA_URL}bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{$Think.const.MEDIA_URL}bootstrap/css/jquery.dataTables.min.css">
 
-	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/holder.min.js"></script>
-	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="{$Think.const.MEDIA_URL}Home/css/manage_jg.css" class="stylesheet">
+
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/holder.min.js"></script>
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mCdkQAiYb4a7X2tm78Z2uo3n"></script>
 </head>
 
 <body>
@@ -40,23 +42,23 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="home.php?m=Home&c=Index&a=index">主页</a>
+						<li><a href="{$Think.const.APP_URL}">主页</a>
 						</li>
-						<li class="dropdown">
+						<li class="dropdown active">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">管理<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">井盖管理</a>
+								<li class="active"><a href="#">井盖管理</a>
 								</li>
-								<!--<li><a href="home.php?m=Home&c=Index&a=manage_2">接收器管理</a>
-								</li>-->
-								<li><a href="home.php?m=Home&c=Index&a=manage_3">用户管理</a>
+								<li><a href="{$Think.const.APP_URL}?m=Home&c=Index&a=manage_user">用户管理</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="home.php?m=Home&c=Index&a=login">登出</a>
+						<li><a id="USER_ID" name="{$Think.session.uid}">当前用户名：{$Think.session.uname}&nbsp;&nbsp;用户ID:{$Think.session.uid}</a>
+						</li>
+						<li><a href="{$Think.const.APP_URL}?m=Home&c=Login&a=logout">登出</a>
 						</li>
 					</ul>
 				</div>
@@ -78,7 +80,9 @@
 						<th>经度</th>
 						<th>纬度</th>
 						<th>地址</th>
+						<th>心跳时间</th>
 						<th>设备描述</th>
+						<th>管理者</th>
 						<th>操作</th>
 					</tr>
 				</thead>
@@ -119,14 +123,22 @@
 						<form class="form-horizontal">
 							<div class="form-group">
 								<label for="input-id" class="col-sm-2 control-label">设备ID</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="input-id" placeholder="请输入" onkeyup="value=this.value.replace(/\D+/g,'')">
+								<div class="col-sm-3">
+									<input type="text" class="form-control" id="input-id" placeholder="自动生成">
+								</div>
+								<label for="safetime" class="col-sm-3 control-label">安全心跳时间(秒)</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="safetime" placeholder="259200 为3天" onkeyup="value=this.value.replace(/\D+/g,'')">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="number" class="col-sm-2 control-label">手机号</label>
-								<div class="col-sm-10">
+								<div class="col-sm-4">
 									<input type="text" class="form-control" id="number" placeholder="请输入" onkeyup="value=this.value.replace(/\D+/g,'')">
+								</div>
+								<label for="uid" class="col-sm-2 control-label">管理者</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="uid" placeholder="请输入" onkeyup="value=this.value.replace(/\D+/g,'')">
 								</div>
 							</div>
 							<div class="form-group">
@@ -165,7 +177,7 @@
 
 </body>
 
-<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>Home/js/manage_1.js"></script>
+<script type="text/javascript" src="{$Think.const.MEDIA_URL}Home/js/manage_jg.js"></script>
 
 <script>
 	jQuery(document).ready(init());

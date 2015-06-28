@@ -1,7 +1,7 @@
 /*添加地图上的标记*/
 function addMarker(id, lat, lng, info, type) {
 	var color = -69;
-	var status = "暂无数据";
+	var status = "丢失通信";
 	if (type === 2) {
 		color = -46;
 		status = "井盖报警";
@@ -82,7 +82,7 @@ function addTable2(id, address, type, angle, volt, time) {
 				TABLE.row(this).data(data).draw(false); //更新数据
 
 
-				var status = "暂无数据";
+				var status = "丢失通信";
 				var color = "default";
 				if (type == 1) {
 					status = "正常";
@@ -99,7 +99,7 @@ function addTable2(id, address, type, angle, volt, time) {
 				var td_t = tr_t.children('td').eq(2);
 				//var t_span = td_t.children('span');
 				td_t.html(result);
-				
+
 				//tr_t.children[2].children[0].removeClass('label-default label-success label-warning label-danger');
 			}
 		});
@@ -148,11 +148,22 @@ function getCurrent() {
 			setStatus(1);
 
 			try {
+
+				//当返回0时表示登陆失效，跳转到登陆界面
+				if (msg.status === 0) {
+					location.href = msg.url;
+					return;
+				}
+
 				var data = msg.data;
 				for (var y in data) {
 
-					var x = data[y];
-					addItem(x["id"] * 1, x["number"] * 1, x["lat"] * 1, x["lng"] * 1, x["address"], x["type"] * 1, x["time"], x["angle"] * 1, x["volt"] * 1, x["describe"]);
+
+					if (y != null) {
+						var x = data[y];
+
+						addItem(x["id"] * 1, x["number"] * 1, x["lat"] * 1, x["lng"] * 1, x["address"], x["type"] * 1, x["time"], x["angle"] * 1, x["volt"] * 1, x["describe"]);
+					}
 
 				}
 
@@ -297,7 +308,7 @@ function init() {
         ],
 		"columnDefs": [{
 			"render": function (data, type, row) {
-				var status = "暂无数据";
+				var status = "丢失通信";
 				var color = "default";
 				if (data == 1) {
 					status = "正常";

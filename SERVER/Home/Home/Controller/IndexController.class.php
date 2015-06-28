@@ -1,22 +1,16 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends Controller {
+class IndexController extends BaseController {
+	
     public function index(){
         $this->display();
     }
 	
-	public function login(){
+	public function manage_jg(){
 		$this->display();
 	}
-	
-	public function manage_1(){
-		$this->display();
-	}
-	public function manage_2(){
-		$this->display();
-	}
-	public function manage_3(){
+	public function manage_user(){
 		$this->display();
 	}
 }
