@@ -42,21 +42,26 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="<?php echo (APP_URL); ?>">主页</a>
+						<li><a href="<?php echo (APP_URL); ?>">实时地图</a>
 						</li>
 						<li class="dropdown active">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">管理<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li class="active"><a href="#">井盖管理</a>
 								</li>
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_user">用户管理</a>
-								</li>
+								<?php if(($_SESSION['kind']) == "1"): ?><li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_user">用户管理</a><?php endif; ?>
+								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_setting">当前设置</a></li>
 							</ul>
+						</li>
+						<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=history">历史记录</a>
 						</li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li><a id="USER_ID" name="<?php echo (session('uid')); ?>">当前用户名：<?php echo (session('uname')); ?>&nbsp;&nbsp;用户ID:<?php echo (session('uid')); ?></a>
+						<li>
+							<a>
+								<?php if(($_SESSION['kind']) == "1"): ?>超级管理员
+									<?php else: ?>普通管理员<?php endif; ?>：<?php echo (session('uname')); ?>&nbsp;&nbsp;ID:<?php echo (session('uid')); ?></a>
 						</li>
 						<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Login&a=logout">登出</a>
 						</li>
@@ -66,7 +71,7 @@
 		</div>
 		<!--导航栏结束-->
 
-		<div id="example_wrapper" class=" container dataTables_wrapper" role="grid">
+		<div id="table_wrapper" class=" container dataTables_wrapper" role="grid">
 			<div class="row-fluid">
 				<div class="span6 myBtnBox"><a id="addFun" class="btn btn-primary">新增</a>
 				</div>
@@ -180,7 +185,20 @@
 <script type="text/javascript" src="<?php echo (MEDIA_URL); ?>Home/js/manage_jg.js"></script>
 
 <script>
-	jQuery(document).ready(init());
+	jQuery(document).ready(function () {
+		try {
+			init();
+		} catch (e) {
+			if (e.name == "ReferenceError" && e.message.indexOf("BMap")>=0) {
+				var r = confirm("连接百度地图出错,点击确认重新加载页面!");
+				if (r == true) {
+					location.reload();
+				}
+			} else {
+				alert(e.name + ": " + e.message);
+			}
+		}
+	});
 </script>
 
 </html>

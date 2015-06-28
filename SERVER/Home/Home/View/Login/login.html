@@ -32,7 +32,7 @@
 		<div class="login">
 			<div class="input-group input-group-lg">
 				<span class="input-group-addon glyphicon glyphicon-user"></span>
-				<input id="username" type="text" name="uname" class="form-control" placeholder="请输入用户名">
+				<input id="username" type="text" name="uname" class="form-control" placeholder="请输入用户名或ID">
 			</div>
 			<br>
 			<div class="input-group input-group-lg">

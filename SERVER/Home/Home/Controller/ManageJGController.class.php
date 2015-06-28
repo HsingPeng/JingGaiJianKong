@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class ManageController extends BaseController {
+class ManageJGController extends BaseController {
 	
 	//查询
     public function retrieve(){

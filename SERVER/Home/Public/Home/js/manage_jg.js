@@ -69,7 +69,7 @@ function sendCreate() {
 		});
 
 		$.ajax({
-			url: 'home.php?m=Home&c=Manage&a=create',
+			url: 'home.php?m=Home&c=ManageJG&a=create',
 			data: {
 				safetime: $('#safetime').val(),
 				number: $('#number').val(),
@@ -119,7 +119,7 @@ function sendUpdate() {
 		});
 
 		$.ajax({
-			url: 'home.php?m=Home&c=Manage&a=update',
+			url: 'home.php?m=Home&c=ManageJG&a=update',
 			data: {
 				id: $('#input-id').val(),
 				number: $('#number').val(),
@@ -231,7 +231,7 @@ function initMap() {
 function initTable() {
 	var table = $("#table").DataTable({
 		
-		"sAjaxSource": 'home.php?m=Home&c=Manage&a=retrieve',
+		"sAjaxSource": 'home.php?m=Home&c=ManageJG&a=retrieve',
 		"oLanguage": { // 汉化
 			"sProcessing": "正在加载数据...",
 			"sLengthMenu": "每页显示 _MENU_ 条 ",
@@ -346,7 +346,7 @@ function sendDelete(id) {
 	});
 
 	$.ajax({
-		url: 'home.php?m=Home&c=Manage&a=delete',
+		url: 'home.php?m=Home&c=ManageJG&a=delete',
 		data: {
 			id: id,
 		},
@@ -376,11 +376,4 @@ function sendDelete(id) {
 		}
 	});
 
-}
-
-//只允许数字
-function onlyNum() {
-	if (!(event.keyCode == 46) && !(event.keyCode == 8) && !(event.keyCode == 37) && !(event.keyCode == 39))
-		if (!((event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105)))
-			event.returnValue = false;
 }

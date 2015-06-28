@@ -13,4 +13,8 @@ class IndexController extends BaseController {
 	public function manage_user(){
 		$this->display();
 	}
+	
+	public function manage_setting(){
+		$this->display();
+	}
 }

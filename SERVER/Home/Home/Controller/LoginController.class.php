@@ -22,7 +22,7 @@ class LoginController extends Controller {
 		$Verify->useNoise 	= true;
 		$Verify->length   	= 4;
 		$Verify->useImgBg 	= false;
-		$Verify->fontSize 	= 20;
+		$Verify->fontSize 	= 18;
 		$Verify->imageH 	= 35;
 		$Verify->imageW 	= 0;
 		$Verify->useCurve 	= false;
@@ -36,7 +36,7 @@ class LoginController extends Controller {
 		return $verify->check($code, $id);
 	}
 
-	
+	//登陆检查
 	public function check(){
 		$fcode=I('post.verify','');
 		
@@ -47,8 +47,16 @@ class LoginController extends Controller {
 		$uname = I('post.uname','');
 		$upassword = I('post.upassword','');
 
+		$uid = I('post.uname',0,'intval');
+
 		$Admin = M('Admin');
-		$user = $Admin->where("uname='%s' AND upassword='%s'",array($uname,$upassword))->find();
+		
+		if($uid == 0){
+			$user = $Admin->where("uname='%s' AND upassword='%s'",array($uname,$upassword))->find();
+		}else{
+			$user = $Admin->where("( uname='%s' AND upassword='%s' ) OR ( uid='%d' AND upassword='%s' ) ",array($uname,$upassword,$uid,$upassword))->find();
+		}
+		
 		
 		if($user==null){
 			$this->error("用户名或密码错误！！！",U("login"),2);

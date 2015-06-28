@@ -6,12 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<title>用户管理</title>
+	<title>当前设置</title>
 
 	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>bootstrap/css/jquery.dataTables.min.css">
 
-	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>Home/css/manage_user.css" class="stylesheet">
+	<link rel="stylesheet" href="<?php echo (MEDIA_URL); ?>Home/css/manage_setting.css" class="stylesheet">
 
 	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/bootstrap.min.js"></script>
@@ -46,9 +46,12 @@
 						<li class="dropdown active">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">管理<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_jg">井盖管理</a></li>
-								<?php if(($_SESSION['kind']) == "1"): ?><li class="active"><a href="#">用户管理</a></li><?php endif; ?>
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_setting">当前设置</a></li>
+								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_jg">井盖管理</a>
+								</li>
+								<?php if(($_SESSION['kind']) == "1"): ?><li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_user">用户管理</a>
+									</li><?php endif; ?>
+								<li class="active"><a href="#">当前设置</a>
+								</li>
 							</ul>
 						</li>
 						<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=history">历史记录</a>
@@ -69,24 +72,59 @@
 		</div>
 		<!--导航栏结束-->
 
-		<div id="table_wrapper" class=" container dataTables_wrapper" role="grid">
-			<div class="row-fluid">
-				<div class="span6 myBtnBox"><a id="addFun" class="btn btn-primary">新增</a>
+		<div class="container">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">当前用户信息</div>
+				<div class="panel-body">
+					<form class="form-horizontal">
+
+						<div class="form-group">
+							<label for="uid" class="col-sm-2 control-label">用户ID</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="uid" placeholder="系统自动生成" disabled="disabled" value="<?php echo (session('uid')); ?>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="uname" class="col-sm-2 control-label">用户名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="uname" placeholder="请输入至少4位，不可与其他用户重复" value="<?php echo (session('uname')); ?>">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="upassword" class="col-sm-2 control-label">新密码</label>
+							<div class="col-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon">
+											<input type="checkbox" id="checkbox_pwd" aria-label="checkbox for upassword">
+										</span>
+									<input type="password" id="upassword" class="form-control" aria-label="upassword" disabled="disabled" placeholder="勾选后可修改密码">
+								</div>
+							</div>
+						</div>
+
+						<div id="old_password_group" class="form-group" style="display:none">
+							<label for="old_upassword" class="col-sm-2 control-label">旧密码</label>
+							<div class="col-sm-10">
+								<input type="password" id="old_upassword" class="form-control" aria-label="old_upassword" placeholder="请填写旧密码">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="remark" class="col-sm-2 control-label">备注信息</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="remark" placeholder="请输入" value="<?php echo (session('remark')); ?>">
+							</div>
+						</div>
+
+					</form>
 				</div>
-				<!--<br>-->
+				<div class="panel-footer">
+					<button type="button" class="btn btn-primary" id="admin-confirm">提交</button>
+				</div>
 			</div>
-			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" id="table">
-				<thead>
-					<tr>
-						<th>用户ID</th>
-						<th>用户名</th>
-						<th>备注信息</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
 		</div>
 
 		<!-- 模态框（Modal） -->
@@ -107,66 +145,9 @@
 		</div>
 		<!-- /.modal -->
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel"><span>添加</span></h4>
-					</div>
-					<div class="modal-body">
-
-						<form class="form-horizontal">
-
-							<div class="form-group">
-								<label for="uid" class="col-sm-2 control-label">用户ID</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="uid" placeholder="系统自动生成" disabled="disabled">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="uname" class="col-sm-2 control-label">用户名</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="uname" placeholder="请输入至少4位，不可与其他用户重复">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="upassword" class="col-sm-2 control-label">密码</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<span class="input-group-addon">
-											<input type="checkbox" id="checkbox_pwd" aria-label="checkbox for upassword">
-										</span>
-										<input type="password" id="upassword" class="form-control" aria-label="upassword" placeholder="勾选后可修改密码">
-									</div>
-								</div>
-							</div>
-							
-							<div class="form-group">
-								<label for="remark" class="col-sm-2 control-label">备注信息</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="remark" placeholder="请输入">
-								</div>
-							</div>
-
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						<button type="button" class="btn btn-primary" id="modal-confirm">确定</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /.modal -->
-
 </body>
 
-<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>Home/js/manage_user.js"></script>
+<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>Home/js/manage_setting.js"></script>
 
 <script>
 	jQuery(document).ready(init());

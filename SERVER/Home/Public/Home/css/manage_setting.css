@@ -9,12 +9,3 @@ html {
 	height: 100%;
 	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
-
-.dataTables_wrapper {
-	padding-top: 10px;
-}
-
-th,td {
-	text-align: center;
-	vertical-align:middle!important;
-}
