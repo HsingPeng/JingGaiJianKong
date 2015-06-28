@@ -22,7 +22,9 @@
 </head>
 
 <body>
-	<!--导航栏开始-->
+
+	<!--调用导航模板-->
+		<!-- 导航 -->
 	<div class="container">
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -41,20 +43,21 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="<?php echo (APP_URL); ?>">实时地图</a>
+						<li id="nav_index"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=index">实时地图</a>
 						</li>
-						<li class="dropdown active">
+						<li class="dropdown" id="nav_manage">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">管理<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_jg">井盖管理</a></li>
-								<?php if(($_SESSION['kind']) == "1"): ?><li class="active"><a href="#">用户管理</a></li><?php endif; ?>
-								<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_setting">当前设置</a></li>
+								<li id="nav_manage_jg"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_jg">井盖管理</a>
+								</li>
+								<?php if(($_SESSION['kind']) == "1"): ?><li id="nav_manage_user"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=manage_user">用户管理</a><?php endif; ?>
+								<li id="nav_history"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=history">历史记录</a>
+								</li>
 							</ul>
 						</li>
-						<li><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=history">历史记录</a>
+						<li id="nav_setting"><a href="<?php echo (APP_URL); ?>?m=Home&c=Index&a=setting">设置</a>
 						</li>
 					</ul>
-
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<a>
@@ -65,104 +68,106 @@
 						</li>
 					</ul>
 				</div>
+
 		</nav>
 		</div>
-		<!--导航栏结束-->
 
-		<div id="table_wrapper" class=" container dataTables_wrapper" role="grid">
-			<div class="row-fluid">
-				<div class="span6 myBtnBox"><a id="addFun" class="btn btn-primary">新增</a>
-				</div>
-				<!--<br>-->
+		<!-- /.导航 -->
+
+	<div id="table_wrapper" class=" container dataTables_wrapper" role="grid">
+		<div class="row-fluid">
+			<div class="span6 myBtnBox"><a id="addFun" class="btn btn-primary">新增</a>
 			</div>
-			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" id="table">
-				<thead>
-					<tr>
-						<th>用户ID</th>
-						<th>用户名</th>
-						<th>备注信息</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+			<!--<br>-->
 		</div>
+		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-hover" id="table">
+			<thead>
+				<tr>
+					<th>用户ID</th>
+					<th>用户名</th>
+					<th>备注信息</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
 
-		<!-- 模态框（Modal） -->
-		<div class="modal" id="load_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div class="progress" style="margin-bottom: 0px">
-							<div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-								<!--<span class="sr-only">-->正在传输...
-								<!--</span>-->
-							</div>
+	<!-- 模态框（Modal） -->
+	<div class="modal" id="load_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="progress" style="margin-bottom: 0px">
+						<div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+							<!--<span class="sr-only">-->正在传输...
+							<!--</span>-->
 						</div>
 					</div>
 				</div>
-				<!-- /.modal-content -->
 			</div>
+			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal -->
+	</div>
+	<!-- /.modal -->
 
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel"><span>添加</span></h4>
-					</div>
-					<div class="modal-body">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel"><span>添加</span></h4>
+				</div>
+				<div class="modal-body">
 
-						<form class="form-horizontal">
+					<form class="form-horizontal">
 
-							<div class="form-group">
-								<label for="uid" class="col-sm-2 control-label">用户ID</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="uid" placeholder="系统自动生成" disabled="disabled">
-								</div>
+						<div class="form-group">
+							<label for="uid" class="col-sm-2 control-label">用户ID</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="uid" placeholder="系统自动生成" disabled="disabled">
 							</div>
+						</div>
 
-							<div class="form-group">
-								<label for="uname" class="col-sm-2 control-label">用户名</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="uname" placeholder="请输入至少4位，不可与其他用户重复">
-								</div>
+						<div class="form-group">
+							<label for="uname" class="col-sm-2 control-label">用户名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="uname" placeholder="请输入至少4位，不可与其他用户重复">
 							</div>
+						</div>
 
-							<div class="form-group">
-								<label for="upassword" class="col-sm-2 control-label">密码</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<span class="input-group-addon">
+						<div class="form-group">
+							<label for="upassword" class="col-sm-2 control-label">密码</label>
+							<div class="col-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon">
 											<input type="checkbox" id="checkbox_pwd" aria-label="checkbox for upassword">
 										</span>
-										<input type="password" id="upassword" class="form-control" aria-label="upassword" placeholder="勾选后可修改密码">
-									</div>
+									<input type="password" id="upassword" class="form-control" aria-label="upassword" placeholder="勾选后可修改密码">
 								</div>
 							</div>
-							
-							<div class="form-group">
-								<label for="remark" class="col-sm-2 control-label">备注信息</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="remark" placeholder="请输入">
-								</div>
-							</div>
+						</div>
 
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						<button type="button" class="btn btn-primary" id="modal-confirm">确定</button>
-					</div>
+						<div class="form-group">
+							<label for="remark" class="col-sm-2 control-label">备注信息</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="remark" placeholder="请输入">
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="modal-confirm">确定</button>
 				</div>
 			</div>
 		</div>
-		<!-- /.modal -->
+	</div>
+	<!-- /.modal -->
 
 </body>
 

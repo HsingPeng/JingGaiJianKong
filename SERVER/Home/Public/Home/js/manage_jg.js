@@ -1,6 +1,8 @@
 /*初始化数据*/
 function init() {
 
+	initNavBar();
+	
 	TABLE = initTable();
 	MODAL = 0;
 	addClick();
@@ -9,8 +11,12 @@ function init() {
 
 	addButton();
 
+}
 
-
+//点亮导航条位置
+function initNavBar(){
+	$('#nav_manage').addClass('active');
+	$('#nav_manage_jg').addClass('active');
 }
 
 function addButton() {

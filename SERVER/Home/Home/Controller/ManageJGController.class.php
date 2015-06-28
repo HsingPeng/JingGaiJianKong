@@ -125,7 +125,7 @@ class ManageJGController extends BaseController {
 			$id = I('post.id',0,'intval');
 
 			$Equip = M('Equipment');
-			$old_data = $Equip->where("id='%d'",array($id))->delete();
+			$Equip->where("id='%d'",array($id))->delete();
 
 			$result["data"] = "success" ;
 			$this->ajaxReturn ($result,'JSON');

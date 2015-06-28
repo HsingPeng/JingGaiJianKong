@@ -17,4 +17,9 @@ class IndexController extends BaseController {
 	public function manage_setting(){
 		$this->display();
 	}
+	
+	public function history(){
+		$this->display();
+	}
+	
 }
