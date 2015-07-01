@@ -7,6 +7,10 @@ class IndexController extends BaseController {
         $this->display();
     }
 	
+	public function index_map(){
+        $this->display();
+    }
+	
 	public function manage_jg(){
 		$this->display();
 	}

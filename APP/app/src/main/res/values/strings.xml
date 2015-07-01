@@ -16,4 +16,11 @@
     <string name="send_fail" >发送失败-></string>
     <string name="connect_fail" >连接服务器失败-></string>
     <string name="action_test_service" >测试服务器</string>
+    <string name="set_base_URL" >设置服务器地址</string>
+    <string name="setting" >设置</string>
+    <string name="test_server_success" >测试服务器连接成功</string>
+    <string name="test_server_fail" >测试服务器连接失败</string>
+    <string name="loading" >请稍等......</string>
+    <string name="read_datebase_fail" >数据库读取失败</string>
+
 </resources>

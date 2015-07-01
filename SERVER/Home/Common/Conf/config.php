@@ -15,6 +15,6 @@ return array(
 	'DB_USER'  				=> 'root', // 用户名
 	'DB_PWD'   				=> '123456', // 密码
 	'DB_PREFIX' 			=> '', // 数据库表前缀 
-	'DB_DSN'    			=> 'mysql:host=localhost;dbname=jiankong;charset=utf8'
+	'DB_DSN'    			=> 'mysql:host=localhost;dbname=jg1;charset=utf8'
     
 );

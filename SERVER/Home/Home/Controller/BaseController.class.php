@@ -16,6 +16,7 @@ class BaseController extends Controller {
 		$kind = session("kind");
 		if($kind==null||$kind==0){
 			$this->error("当前登录无效，请重新登陆！！！",U("Login/logout"),1);
+			//$this->redirect("Login/logout");
 		}
 		
 	}

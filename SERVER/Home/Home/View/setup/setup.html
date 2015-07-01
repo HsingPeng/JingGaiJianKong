@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>部署</title>
+
+	<link rel="stylesheet" href="{$Think.const.MEDIA_URL}bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{$Think.const.MEDIA_URL}bootstrap/css/docs.min.css">
+
+	<style type="text/css">
+		body {
+			padding-top: 70px;
+			padding-bottom: 50px;
+			min-width: 400px;
+		}
+		
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+		}
+		
+		.bs-docs-section {
+			padding-left: 60px;
+			padding-right: 60px;
+			padding-bottom: 10px;
+			border-radius: 6px;
+		}
+		
+		.completed {
+			background-color: #D1EDC9;
+		}
+	</style>
+
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{$Think.const.MEDIA_URL}bootstrap/js/holder.min.js"></script>
+</head>
+
+<body>
+
+	<!-- 模态框（Modal） -->
+	<div class="modal" id="load_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="progress" style="margin-bottom: 0px">
+						<div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+							<!--<span class="sr-only">-->正在传输...
+							<!--</span>-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+	</div>
+	<!-- /.modal -->
+
+	<div class="container">
+		<div class="jumbotron bs-docs-section">
+			<h1>第一次运行</h1>
+			<p>第一次使用系统需要通过本页面，连接MySQL数据库，完成对系统的初始化。只需要跟着向导，即可轻松的完成操作。点击开始！</p>
+			<p><a class="btn btn-primary btn-lg" href="#1" id="b_start">开始</a>
+			</p>
+		</div>
+
+		<div class="bs-docs-section" style="visibility: hidden;display:none" id="step_1">
+			<h1 id="1" class="page-header">第一步</h1>
+			<h4>设置Thinkphp与MySQL数据库的连接</h4>
+
+			<div class="bs-callout bs-callout-danger">
+				<h4>请首先填写数据库名称，当数据库已存在则会删除重建。</h4>
+				<form class="form-inline">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">数据库名：</div>
+							<input type="text" class="form-control" id="db_name" placeholder="例如：jiankong">
+						</div>
+					</div>
+				</form>
+				<br>
+				<p>若创建失败可使用phpMyAdmin等工具手动创建，排序选择utf8_general_ci。</p>
+				<p>然后打开项目根目录,依次进入Home目录->Common目录->Conf目录->打开config.php。填写好MySQL数据库的用户名，密码和刚刚创建的数据库名，其他的不用更改。示例如下：</p>
+				<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">//PDO连接方式</span><br><span class="nt">'DB_TYPE'  	</span> <span class="na">=></span><span class="s">'mysql'</span>,<span class="c"> // 数据库类型</span><br><span class="nt">'DB_USER'  	</span> <span class="na">=></span><span class="s">'root'</span>,<span class="c"> // 用户名</span><br><span class="nt">'DB_PWD'   	</span> <span class="na">=></span><span class="s">'123456'</span>,<span class="c"> // 密码</span><br><span class="nt">'DB_PREFIX' 	</span> <span class="na">=></span><span class="s">''</span>,<span class="c"> // 数据库表前缀</span><br><span class="nt">'DB_DSN'    	</span> <span class="na">=></span><span class="s">'mysql:host=localhost;dbname=jiankong;charset=utf8'</span><span class="c"> // jiankong为数据库名称</span></code></pre>
+				</div>
+				<p>设置完成点击下方按钮</p>
+			</div>
+			<h2><button type="button" class="btn btn-lg btn-danger" id="b_1">设置完成</button></h2>
+
+		</div>
+
+		<div class="bs-docs-section" style="visibility: hidden;display:none" id="step_2">
+			<h1 id="2" class="page-header">第二步</h1>
+			<h4>创建数据表</h4>
+
+			<div class="bs-callout bs-callout-warning">
+				<h4>系统会自动创建相应的数据表，若表之前已经存在则会将其删除重新创建</h4>
+				<p>点击选择是否导入模拟数据，包括事先填写好的井盖信息，记录和普通管理员。超级管理员账户已经存在，不在模拟数据范围。</p>
+				<label>
+					<input id="checkbox_2" type="checkbox" checked>勾选导入模拟数据</label>
+			</div>
+			<h2><button type="button" class="btn btn-lg btn-warning" id="b_2">点击创建</button></h2>
+		</div>
+
+		<div class="bs-docs-section" style="visibility: hidden;display:none" id="step_3">
+			<h1 id="3" class="page-header">第三步</h1>
+			<h4>操作完成</h4>
+
+			<div class="bs-callout bs-callout-info">
+				<h4>恭喜您，初始化成功</h4>
+				<p>您可使用超级管理员账户登陆系统，登陆后请及时进入设置页面修改密码。</p>
+				<h3>用户名：<code>admin</code></h3>
+				<h3>密码：<code>123456</code></h3>
+				<p>点击下方按钮登陆系统</p>
+			</div>
+			<h2><button type="button" class="btn btn-lg btn-primary" id="b_3">登陆</button></h2>
+			<br>
+			<h1>此页面以后不必再访问，除非需要重新部署系统！！！</h1>
+			<br>
+		</div>
+
+	</div>
+
+</body>
+
+<script>
+	jQuery(document).ready(init());
+
+	function init() {
+		$('#b_start').click(function () {
+			$('#step_1').css('visibility', 'visible');
+			$('#step_1,#step_2,#step_3').css('display', 'block');
+		});
+		$('#b_1').click(function () {
+			connect();
+		});
+		$('#b_2').click(function () {
+			create();
+		});
+		$('#b_3').click(function () {
+			location.href = 'index.php';
+		});
+		
+		$('#db_name').bind('keypress',function(event){
+            if(event.keyCode == "13")    
+            {
+                connect();
+            }
+        });
+		
+	}
+
+	function show_modal() {
+		$('#load_modal').modal({
+			show: true, //显示
+			keyboard: false, //键盘ESC
+			backdrop: 'static' //点击空白处不可关闭
+		});
+	}
+
+	function connect() {
+		
+		if($('#db_name').val()==''){
+			$('#db_name').focus();
+			return;
+		}
+		
+
+		show_modal();
+
+		$.ajax({
+			url: 'home.php?m=Home&c=Setup&a=step_1',
+			type: 'post',
+			cache: false,
+			dataType: 'json',
+			data: {
+				name: $('#db_name').val(),
+			},
+			success: function (msg) {
+
+				$('#load_modal').modal('hide');
+
+				if (msg.data == "success") {
+					//alert("连接成功，请进行下一步！");
+					$('#step_2').css('visibility', 'visible');
+					location.href = '#2';
+					$('#b_1').removeClass('btn-danger');
+					$('#b_1').addClass('btn-success');
+					$('#b_1,#db_name').attr("disabled", true);
+					$('#step_1').addClass('completed');
+				} else {
+					alert("创建数据库表失败，请重试或手动创建！ " + msg.data);
+				}
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert("服务器连接出错！ " + textStatus + " " + errorThrown);
+				$('#load_modal').modal('hide');
+			}
+		});
+	}
+
+	function create() {
+		//alert($('#checkbox_2')[0].checked);
+		show_modal();
+
+		$.ajax({
+			url: 'home.php?m=Home&c=Setup&a=step_2',
+			type: 'post',
+			cache: false,
+			dataType: 'json',
+			data: {
+				inputdata: $('#checkbox_2')[0].checked,
+			},
+			success: function (msg) {
+
+				$('#load_modal').modal('hide');
+
+				if (msg.data == "success") {
+					//alert("连接成功，请进行下一步！");
+					$('#step_3').css('visibility', 'visible');
+					location.href = '#3';
+					$('#b_2').removeClass('btn-warning');
+					$('#b_2').addClass('btn-success');
+					$('#b_2,#checkbox_2').attr("disabled", true);
+					$('#step_2').addClass('completed');
+				} else {
+					alert("连接数据库失败，请重新设置！ " + msg.data);
+				}
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert("服务器连接出错！ " + textStatus + " " + errorThrown);
+				$('#load_modal').modal('hide');
+			}
+		});
+	}
+</script>
+
+</html>

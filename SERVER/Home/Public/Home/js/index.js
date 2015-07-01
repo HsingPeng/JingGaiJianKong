@@ -1,278 +1,35 @@
-/*添加地图上的标记*/
-function addMarker(id, lat, lng, info, type) {
-	var color = -69;
-	var status = "丢失通信";
-	if (type === 2) {
-		color = -46;
-		status = "井盖报警";
-	} else if (type === 1) {
-		color = 1;
-		status = "井盖正常";
-	}
-
-	var window_opts = {
-		width: 250, // 信息窗口宽度
-		height: 80, // 信息窗口高度
-		title: "ID:" + id + " " + status, // 信息窗口标题
-		enableMessage: false //设置不允许信息窗发送短息
-	};
-
-	var marker_opts = {
-		icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
-			imageOffset: new BMap.Size(color, -21)
-		})
-	};
-
-	var point = new BMap.Point(lng, lat);
-	var marker = new BMap.Marker(point, marker_opts); /*创建标注*/
-	map.addOverlay(marker); /*将标注添加到地图中*/
-
-	var infoWindow = new BMap.InfoWindow(info, window_opts); /*创建信息窗口对象 */
-	itemlist[id]['infowindow'] = infoWindow; //添加到全局变量集合里面
-	/*addClickHandler(info, marker, openInfo);*/
-	marker.addEventListener("click", function (e) {
-		openInfo(infoWindow, e);
-	});
-
-	function openInfo(infoWindow, e) {
-		var p = e.target;
-		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
-		map.openInfoWindow(infoWindow, point); /*开启信息窗口*/
-	}
-
-};
-/*载入项*/
-function addItem(id, number, lat, lng, address, type, time, angle, volt, describe) {
-	itemlist[id] = {
-		id: id,
-		number: number,
-		lat: lat,
-		lng: lng,
-		address: address,
-		type: type,
-		time: time,
-		angle: angle,
-		volt: volt,
-		describe: describe,
-		infowindow: null
-	};
-	addMarker(id, lat, lng, address, type);
-	addTable2(id, address, type, angle, volt, time);
-
-}
-
-
-function addTable2(id, address, type, angle, volt, time) {
-
-	//var status = type == 1 ? "正常" : "倾斜报警";
-	var flag = true;
-
-
-	if (!CONFIG.init) {
-		TABLE.rows().every(function () {
-			var data = this.data();
-			if (data.id === id) {
-				data.address = address;
-				data.type = type;
-				data.angle = angle;
-				data.volt = volt;
-				data.time = time;
-				flag = false;
-
-				TABLE.row(this).data(data).draw(false); //更新数据
-
-
-				var status = "丢失通信";
-				var color = "default";
-				if (type == 1) {
-					status = "正常";
-					color = "success";
-				} else if (type == 2) {
-					status = "倾斜报警";
-					color = "danger";
-				}
-
-				var result = '<span class="label label-' + color + '">' + status + '</span>';
-
-				var tr_i = this.index();
-				var tr_t = $('tbody').children('tr').eq(tr_i);
-				var td_t = tr_t.children('td').eq(2);
-				//var t_span = td_t.children('span');
-				td_t.html(result);
-
-				//tr_t.children[2].children[0].removeClass('label-default label-success label-warning label-danger');
-			}
-		});
-	}
-
-
-
-	if (flag) {
-		TABLE.row.add({
-			id: id,
-			address: address,
-			status: type,
-			angle: angle,
-			volt: volt,
-			time: time
-		}).draw();
-	}
-
-}
-
-
-/*定位到中心*/
-function locateItem(id) {
-	if (id != null) {
-		var lat_t = itemlist[id]["lat"];
-		var lng_t = itemlist[id]["lng"];
-		var point = new BMap.Point(lng_t, lat_t);
-		map.panTo(point);
-		map.openInfoWindow(itemlist[id]["infowindow"], point); /*开启信息窗口*/
-	}
-}
-
-function getCurrent() {
-
-	$.ajax({
-		type: "POST",
-		dataType: "json",
-		url: "home.php?m=Home&c=GetCurrent&a=getcurrent",
-		data: {
-			data: JSON.stringify(CONFIG)
-		}, //转成JSON发送出去
-		timeout: 30000, //超时
-		success: function (msg) {
-
-			CONFIG.status = 1;
-			setStatus(1);
-
-			try {
-
-				//当返回0时表示登陆失效，跳转到登陆界面
-				if (msg.status === 0) {
-					location.href = msg.url;
-					return;
-				}
-
-				var data = msg.data;
-				for (var y in data) {
-
-
-					if (y != null) {
-						var x = data[y];
-
-						addItem(x["id"] * 1, x["number"] * 1, x["lat"] * 1, x["lng"] * 1, x["address"], x["type"] * 1, x["time"], x["angle"] * 1, x["volt"] * 1, x["describe"]);
-					}
-
-				}
-
-				//把上次更新的项放进去
-				if (CONFIG.init) {
-					//地图中心定位到第一个item
-					var tr = $("tbody tr:first");
-					var row = TABLE.row(tr);;
-					var id = row.data().id;
-					locateItem(id);
-
-					CONFIG.init = 0; //关闭初始化请求
-
-				}
-
-				CONFIG.updatedTime = msg.updatedTime;
-
-
-			} catch (e) {
-				alert("获取数据错误: " + e.name + ' ' + e.message);
-			}
-
-			getCurrent();
-			$('#load_modal').modal('hide');
-
-		},
-		error: function (XMLHttpRequest, textStatus, errorThrown) {
-			//alert("连接服务器错误: " + textStatus + " " + errorThrown);
-			setStatus(3);
-			CONFIG.status = 0;
-			$('#load_modal').modal('hide');
-			//设置定时重试
-			setTimeout(function () {
-				getCurrent();
-				setStatus(2);
-			}, 1000);
-		}
-	});
-}
-
-//设置服务器状态 1 已连接 2 重新连接 3 已断开
-function setStatus(kind) {
-
-	$('#status').removeClass('label-default label-success label-warning label-danger');
-
-
-	switch (kind) {
-	case 1:
-		$('#status').addClass("label-success");
-		$('#status').text('已连接服务器');
-		break;
-	case 2:
-		$('#status').addClass("label-warning");
-		$('#status').text('正在连接服务器');
-		break;
-	case 3:
-		$('#status').addClass("label-danger");
-		$('#status').text('已断开服务器');
-		break;
-
-	}
-
-}
-
-//绑定表格点击高亮及定位
-function addClick2() {
-	$('#table tbody').on('click', 'tr', function () {
-
-		TABLE.$('tr.selected').removeClass('selected');
-		$(this).addClass('selected');
-		var row = TABLE.row($(this));
-		locateItem(row.data().id);
-
-	});
-
-
-
-}
-
-//点亮导航条位置
-function initNavBar(){
-	$('#nav_index').addClass('active');
-}
-
-/*初始化数据*/
+//初始化
 function init() {
-
 	initNavBar();
-	
-	//模态 窗口
-	$('#load_modal').modal({
-		show: true, //显示
-		keyboard: false, //键盘ESC
-		backdrop: 'static' //点击空白处不可关闭
-	});
+	show_load_model();
+
+	TABLE_COUNT = initCount(); //表格里异常数据计数器
+
+	TOP_TABLE = initTopTable();
 
 	CONFIG = new Object();
 	CONFIG.init = 1; //默认第一次是初始化请求
 	CONFIG.updatedTime = ''; //上次更新的最新时间
 	CONFIG.status = 1; //0为意外断线
 
-	itemlist = {}; //存储所有井盖的信息
+	getCurrent(); //开始获取数据
+	setConnectStatus(2); //设置标签为正在连接
 
-	TABLE = $('#table').DataTable({
+}
+
+//点亮导航条位置
+function initNavBar() {
+	$('#nav_index').addClass('active');
+}
+
+function initTopTable() {
+
+	var table_init = $('#top_table').DataTable({
 		"oLanguage": { // 汉化
 			"sProcessing": "正在加载数据...",
 			"sLengthMenu": "显示 _MENU_ 条 ",
-			"sZeroRecords": "没有您要搜索的内容",
-			"sInfo": "从_START_ 到 _END_ 条记录——总记录数为 _TOTAL_ 条",
+			"sZeroRecords": "没有异常数据",
+			"sInfo": "当前从_START_ 到 _END_ 条记录——总记录数为 _TOTAL_ 条",
 			"sInfoEmpty": "记录数为0",
 			"sInfoFiltered": "(全部记录数 _MAX_  条)",
 			"sInfoPostFix": "",
@@ -285,14 +42,10 @@ function init() {
 				"sLast": " 最后一页 "
 			}
 		},
-		"bPaginate": false, // 分页按钮
 		"bFilter": false, // 搜索栏
-		"bLengthChange": false, // 每行显示记录数
 		"bAutoWidth": false, //一行显示
-		"bScrollInfinite": true, //滚动条
-		"bSort": true, // 排序
-		"bInfo": false, //页脚信息
-		"sPaginationType": "bootstrap",
+		"bLengthChange": false, // 每页显示记录数
+		"deferRender": true, //延迟加载
 		"columns": [
 			{
 				"data": "id"
@@ -301,7 +54,7 @@ function init() {
 				"data": "address"
 			},
 			{
-				"data": "status"
+				"data": "type"
 			},
 			{
 				"data": "angle"
@@ -330,35 +83,187 @@ function init() {
 			"targets": 2
       }],
 	});
-	addClick2(); //添加点击响应
+	return table_init;
+}
 
-	//地图右上角工具栏
-	var top_right_navigation = new BMap.NavigationControl({
-		anchor: BMAP_ANCHOR_TOP_RIGHT,
-		type: BMAP_NAVIGATION_CONTROL_SMALL
-	}); //右上角，仅包含平移和缩放按钮
-
-	/*百度地图	*/
-	map = new BMap.Map("allmap", {
-		enableMapClick: false /*设置不可点击覆盖物*/
+//显示等待窗口
+function show_load_model() {
+	//模态 窗口
+	$('#load_modal').modal({
+		show: true, //显示
+		keyboard: false, //键盘ESC
+		backdrop: 'static' //点击空白处不可关闭
 	});
-	map.centerAndZoom(new BMap.Point(116.417854, 39.921988), 15);
-	/*map.enableScrollWheelZoom(); */
-	/*开启滚轮缩放*/
+}
 
-	map.addControl(top_right_navigation); //右上角
+function getCurrent() {
 
-	//点击切换显示列表
-	$(".suojing").click(function () {
-		$(".table-responsive").toggle();
+	$.ajax({
+		type: "POST",
+		dataType: "json",
+		url: "home.php?m=Home&c=GetCurrent&a=getcurrent",
+		data: {
+			data: JSON.stringify(CONFIG)
+		}, //转成JSON发送出去
+		timeout: 30000, //超时
+		success: function (msg) {
+
+			CONFIG.status = 1;
+			setConnectStatus(1);
+
+			try {
+
+				//当返回0时表示登陆失效，跳转到登陆界面
+				if (msg.status === 0) {
+					location.href = msg.url;
+					return;
+				}
+
+				var data = msg.data;
+
+				if (data.length > 0) {
+					for (var y in data) {
+						var x = data[y];
+
+						addItem(x["id"] * 1, x["number"] * 1, x["lat"] * 1, x["lng"] * 1, x["address"], x["type"] * 1, x["time"], x["angle"] * 1, x["volt"] * 1, x["describe"]);
+					}
+
+					if (CONFIG.init) {
+						CONFIG.init = 0; //关闭初始化请求
+					}
+
+				}
+
+
+
+				if (TABLE_COUNT.count === 0) {
+					changeStatus(1); //设置状态正常
+				} else {
+					changeStatus(2); //设置状态异常
+				}
+
+				CONFIG.updatedTime = msg.updatedTime;
+
+
+			} catch (e) {
+				alert("获取数据错误: " + e.name + ' ' + e.message);
+			}
+
+			getCurrent();
+			$('#load_modal').modal('hide');
+
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			//alert("连接服务器错误: " + textStatus + " " + errorThrown);
+			setConnectStatus(3);
+			CONFIG.status = 0;
+			$('#load_modal').modal('hide');
+			//设置定时重试
+			setTimeout(function () {
+				getCurrent();
+				setConnectStatus(2);
+			}, 1000);
+		}
 	});
+}
 
-	//id, number, lat, lng, address, type, time, angle, volt, describe
-	/*addItem(1, 13797741868, 116.417854, 39.921988, "北京市东城区王府井大街1", 1, "2015-06-14 15:14:26", 0, 3.58);
-	addItem(2, 13797741867, 116.406605, 39.921585, "北京市东城区东华门大街1", 2, "2015-06-14 15:14:26", 4, 3.4);
-	addItem(3, 13797741866, 116.412222, 39.912345, "北京市东城区正义路1", 1, "2015-06-14 15:14:26", 0, 3.58);*/
+//设置服务器状态 1 已连接 2 重新连接 3 已断开
+function setConnectStatus(kind) {
 
-	//开始获取数据
-	getCurrent();
-	setStatus(2); //设置标签为正在连接
+	$('#connect_status').removeClass('label-default label-success label-warning label-danger');
+
+
+	switch (kind) {
+	case 1:
+		$('#connect_status').addClass("label-success");
+		$('#connect_status').text('已连接服务器');
+		break;
+	case 2:
+		$('#connect_status').addClass("label-warning");
+		$('#connect_status').text('正在连接服务器');
+		break;
+	case 3:
+		$('#connect_status').addClass("label-danger");
+		$('#connect_status').text('已断开服务器');
+		break;
+
+	}
+
+}
+
+/*载入项*/
+function addItem(id, number, lat, lng, address, type, time, angle, volt, describe) {
+
+
+	var flag = true; //是否不存在的标志,防止重复添加
+
+	if (!CONFIG.init) {
+		TOP_TABLE.rows().every(function () {
+			var data = this.data();
+			if (data!=null && data.id == id) {
+
+				//如果由异常变成正常
+				if (type === 1) {
+					this.remove().draw();
+					TABLE_COUNT.reduce();
+				} else {
+					data.address = address;
+					data.type = type;
+					data.angle = angle;
+					data.volt = volt;
+					data.time = time;
+					flag = false;
+
+					TOP_TABLE.row(this).data(data).draw(false); //更新数据
+				}
+			}
+		});
+	}
+
+	if (type === 1) {
+		return;
+	}
+
+	if (flag) {
+		TOP_TABLE.row.add({
+			id: id,
+			address: address,
+			type: type,
+			angle: angle,
+			volt: volt,
+			time: time
+		}).draw();
+		TABLE_COUNT.add();
+	}
+
+
+
+}
+
+//初始化表格计数器，用于判断井盖是否有异常
+function initCount() {
+
+	return {
+		count: 0,
+		add: function () {
+			this.count++;
+		},
+		reduce: function () {
+			if (this.count != 0) {
+				this.count--;
+			}
+		}
+	};
+
+}
+
+//1 为正常 2为异常
+function changeStatus(type) {
+	if (type === 1) {
+		$('#status_ok').show();
+		$('#status_error').hide();
+	} else if (type === 2) {
+		$('#status_ok').hide();
+		$('#status_error').show();
+	}
 }

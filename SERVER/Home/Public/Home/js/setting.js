@@ -8,6 +8,7 @@ function init() {
 
 //点亮导航条位置
 function initNavBar(){
+	$('#nav_admin').addClass('active');
 	$('#nav_setting').addClass('active');
 }
 

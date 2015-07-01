@@ -11,7 +11,12 @@ class UpDateController extends Controller {
 		
 		try {
 			$post_data = json_decode($GLOBALS['HTTP_RAW_POST_DATA']);
-			\Think\Log::record($post_data);
+			//\Think\Log::record($post_data);
+			//判断是否是测试请求
+			if($post_data->test==="1"){
+				$result["data"] = "success" ;
+				$this->ajaxReturn ($result,'JSON');
+			}
 			
 			$number = $post_data->number;
 			$type = $post_data->type;
@@ -29,8 +34,11 @@ class UpDateController extends Controller {
 			$Equip = M('Equipment');
 			
 			$list = $Equip->where("number='%s'",array($number))->getField('id,safetime');
-			$id = $list['id'];
-			$safetime = $list['safetime'];
+			
+			foreach($list as $key => $value){
+				$id = $key;
+				$safetime = $value;
+			}
 			
 			if($id == null){
 				$result["data"] = "设备不存在" ;
@@ -45,7 +53,7 @@ class UpDateController extends Controller {
 				
 				$data['volt'] = $volt;
 				
-				$validtime = strtotime("2015-06-27 16:40:20") + 259200;		//设置失效时间
+				$validtime = strtotime($time) + $safetime;		//设置失效时间
 				$data['validtime'] = date("Y-m-d H:i:s ",$validtime);
 				
 			}else if($type==2){

@@ -13,4 +13,14 @@
     <string name="click_stop">stop</string>
     <string name="click_open">open</string>
     <string name="show_log_begin">LOG ></string>
+    <string name="send_success" >send successful-></string>
+    <string name="send_fail" >send failure-></string>
+    <string name="connect_fail" >service connection fail-></string>
+    <string name="action_test_service" >test service</string>
+    <string name="set_base_URL" >set service URL</string>
+    <string name="setting" >setting</string>
+    <string name="test_server_success" >Server connection is successful</string>
+    <string name="test_server_fail" >Server connection is failure</string>
+    <string name="loading" >loading......</string>
+    <string name="read_datebase_fail" >Database read failure</string>
 </resources>

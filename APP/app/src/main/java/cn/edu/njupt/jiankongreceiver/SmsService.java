@@ -1,12 +1,15 @@
 package cn.edu.njupt.jiankongreceiver;
 
+import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Handler;
 import android.os.IBinder;
 
 import java.io.FileOutputStream;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.Date;
+import java.util.List;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -28,22 +31,55 @@ import org.json.JSONObject;
 public class SmsService extends Service {
 
     private static final String TAG = "SmsService";
+    private boolean SERVER_OPEN_FLAG = false;
 
     //创建一个可重用固定线程数的线程池
     //ExecutorService pool = Executors.newFixedThreadPool(CONSTANT.THREAD_POOL_SIZE);
 
     RequestQueue mQueue;
-
-    public SmsService() {
-    }
+    private Handler handler = new Handler();
 
     @Override
     public void onCreate() {
         // TODO Auto-generated method stub
         super.onCreate();
         mQueue = Volley.newRequestQueue(this);
-        addToStatusbar(getString(R.string.service_started));
+        get_setting();
     }
+
+    /**
+     * 读取数据库，重新发送所有失败的请求
+     */
+    private void read_DB() {
+        DBHelper db = new DBHelper(SmsService.this);
+        try {
+            List<JSONObject> list = db.getAllRecord();
+            for (JSONObject jsonObject:list){
+                long _id = jsonObject.getLong(FeedEntry._ID);
+                jsonObject.remove(FeedEntry._ID);
+                startHTTP(jsonObject,_id);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            show(getString(R.string.read_datebase_fail) + e.getMessage());
+        }
+    }
+
+    /**
+     * 读取设置
+     * URL和服务是否开启
+     */
+    private void get_setting() {
+        SharedPreferences sp = this.getSharedPreferences(CONSTANT.SHARED_NAME, MODE_PRIVATE);
+        CONSTANT.BASE_URL = sp.getString(CONSTANT.BASE_URL_NAME, CONSTANT.BASE_URL);
+        boolean flag_open = sp.getBoolean(CONSTANT.OPEN_FLAG, false) ;
+        if(flag_open){
+            start_service();
+        }else{
+            close_service();
+        }
+    }
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -58,17 +94,61 @@ public class SmsService extends Service {
             case CONSTANT.DEFAULT_TASK:
                 break;
             case CONSTANT.SEND_TASK:
-                try {
-                    send(intent);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    show(e.getMessage());
+                if(SERVER_OPEN_FLAG){
+                    try {
+                        send(intent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        show(e.getMessage());
+                    }
                 }
+                break;
+            case CONSTANT.SEND_TEST_TASK:
+                send_test_task();
+                break;
+            case CONSTANT.START_TASK:
+                start_service();
+                break;
+            case CONSTANT.CLOSE_TASK:
+                close_service();
                 break;
         }
     }
 
+    private void close_service() {
+        deleteIconToStatusbar();
+        SERVER_OPEN_FLAG = false;
+        Intent intent1 = new Intent(CONSTANT.MAIN_BROADCAST);
+        intent1.putExtra(CONSTANT.TASK, CONSTANT.CLOSE_TASK);
+        this.sendBroadcast(intent1);
+        this.stopSelf();
+    }
+
+    private void start_service() {
+
+        read_DB();
+
+        addToStatusbar(getString(R.string.service_started));
+        SERVER_OPEN_FLAG = true;
+        Intent intent1 = new Intent(CONSTANT.MAIN_BROADCAST);
+        intent1.putExtra(CONSTANT.TASK,CONSTANT.START_TASK);
+        this.sendBroadcast(intent1);
+    }
+
     /**
+     *测试服务器连接是否正常
+     */
+    private void send_test_task() {
+        try {
+            send_TEST_HTTP();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            show(e.getMessage());
+        }
+    }
+
+    /**
+     * 发送数据
      *  2#44			报警代码2 倾斜角度44度
      *  1#3.56#0		心跳代码1 电池电压3.56 倾斜角度0
      *  时间样本 2015-06-15 23:39:08
@@ -108,36 +188,33 @@ public class SmsService extends Service {
 
     }
 
-    private void sendHTTP(final int type,final String number,final int angle, final String time,final float volt) throws JSONException {
+    /**
+     * 发送测试请求
+     * @throws JSONException
+     */
+    private void send_TEST_HTTP() throws JSONException {
 
         JSONObject jsonObject = new JSONObject();
 
-            jsonObject.put(CONSTANT.TYPE,type+"");
-            jsonObject.put(CONSTANT.ANGLE,angle+"");
-            jsonObject.put(CONSTANT.NUMBER,number+"");
-            jsonObject.put(CONSTANT.TIME,time+"");
-            jsonObject.put(CONSTANT.VOLT,volt+"");
+        jsonObject.put(CONSTANT.TEST, CONSTANT.TEST_FLAG);      //测试标志
 
-
-
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(CONSTANT.SEND_URL,jsonObject ,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(CONSTANT.BASE_URL+CONSTANT.SEND_URL,jsonObject ,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, response.toString());
                         String data = response.optString(CONSTANT.DATA);
                         if(data.equals(CONSTANT.SUCCESS)){
-                            show(getString(R.string.send_success)+number+"->"+time);
+                            show(getString(R.string.test_server_success)+"-发送日期->"+DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()));
                         }else{
-                            show(getString(R.string.send_fail)+data+"->"+number+"->"+time);
+                            show(getString(R.string.test_server_fail)+"-发送日期->"+DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()));
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, error.getMessage(), error);
-                show(getString(R.string.connect_fail) + error.getMessage() + "->" + number + "->" + time);
+                show(getString(R.string.connect_fail) + "-发送日期->" + DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()) + "->" + DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()));
             }
         });
 
@@ -146,12 +223,89 @@ public class SmsService extends Service {
     }
 
     /**
+     * 正常发送请求
+     * @param type
+     * @param number
+     * @param angle
+     * @param time
+     * @param volt
+     * @throws JSONException
+     */
+    private void sendHTTP(final int type,final String number,final int angle, final String time,final float volt) throws JSONException {
+
+        JSONObject jsonObject = new JSONObject();
+
+            jsonObject.put(CONSTANT.TYPE,type+"");
+            jsonObject.put(CONSTANT.ANGLE,angle+"");
+            jsonObject.put(CONSTANT.NUMBER,number+"");
+            jsonObject.put(CONSTANT.TIME,time+"");
+            jsonObject.put(CONSTANT.VOLT, volt + "");
+
+        //先把数据存入数据库
+        DBHelper db = new DBHelper(this);
+        long _id = db.putRecord(type+"",number+"",angle+"",time+"",volt + "");
+
+        startHTTP(jsonObject, _id);
+
+    }
+
+    /**
+     * 加入发送队列
+     * @param jsonObject
+     * @param _id
+     */
+    private void startHTTP(final JSONObject jsonObject,final long _id) {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(CONSTANT.BASE_URL+CONSTANT.SEND_URL,jsonObject ,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, response.toString());
+                        String data = response.optString(CONSTANT.DATA);
+
+                        //删除数据库里的内容
+                        DBHelper db = new DBHelper(SmsService.this);
+                        db.deleteRecord(_id);
+
+                        if(data.equals(CONSTANT.SUCCESS)){
+                            show(getString(R.string.send_success) + "-发送日期->" + DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()) + "-number->" + jsonObject.optString(CONSTANT.NUMBER) + "-数据日期->" + jsonObject.optString(CONSTANT.TIME));
+                        }else{
+                            show(getString(R.string.send_fail) + "-发送日期->" + DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()) + "-data->" + data + "-号码->" + jsonObject.optString(CONSTANT.NUMBER) + "-数据日期->" + jsonObject.optString(CONSTANT.TIME));
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, error.getMessage(), error);
+                //连接失败，准备再次发送
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        DBHelper db = new DBHelper(SmsService.this);
+                        try {
+                            startHTTP(db.getRecord(_id), _id);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            show(getString(R.string.read_datebase_fail) + e.getMessage());
+                        }
+                    }
+                }, CONSTANT.RETRY_TIME);
+                show(getString(R.string.connect_fail) + "-发送日期->" + DateFormat.format("yyyy-MM-dd kk:mm:ss", new Date()) + "-号码->" + jsonObject.optString(CONSTANT.NUMBER) + "-数据日期->" + jsonObject.optString(CONSTANT.TIME));
+            }
+        });
+
+        mQueue.add(jsonObjectRequest);      //执行
+    }
+
+
+    /**
      * 显示数据并且写入日志文件
      */
     private void show(String data){
 
+        data+="\n";
 
         Intent intent1 = new Intent(CONSTANT.MAIN_BROADCAST);
+        intent1.putExtra(CONSTANT.TASK,CONSTANT.SHOW_TEXT_TASK);
         intent1.putExtra(CONSTANT.DATA, data);
         this.sendBroadcast(intent1);
         Log.d(TAG, "send broadcast");
@@ -176,6 +330,7 @@ public class SmsService extends Service {
         // TODO Auto-generated method stub
         super.onDestroy();
         deleteIconToStatusbar();
+        mQueue.stop();
     }
 
     /*

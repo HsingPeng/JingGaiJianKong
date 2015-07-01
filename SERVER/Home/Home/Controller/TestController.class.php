@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 
-class TestController extends Controller {
+class TestController extends LocalController {
 	public function test1(){
 		
 		$Equip = M('Equipment');
@@ -96,5 +96,16 @@ class TestController extends Controller {
 		$data = $this->handleSafeTime1($data);
 		show_bug($data);
 	}
+	
+	//home.php?m=Home&c=Test&a=test7
+	public function test7() {
+		$Equip = M('Equipment');
+		$list = $Equip->where("number='%s'",array('15555215556'))->getField('id,safetime');
+		foreach($list as $key => $value){
+			show_bug($key);
+		}
+		
+	}
+
 	
 }

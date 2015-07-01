@@ -1,0 +1,48 @@
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLHome/css/login.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:MEDIA_URLHome
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLbootstrap/css/bootstrap.min.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载模块:MEDIA_URLbootstrap
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLbootstrap/js/jquery-1.11.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:MEDIA_URLbootstrap
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLbootstrap/js/bootstrap.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:MEDIA_URLbootstrap
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLbootstrap/js/md5.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载模块:MEDIA_URLbootstrap
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLbootstrap/js/holder.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:MEDIA_URLbootstrap
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/MEDIA_URLHome/js/login.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:MEDIA_URLHome
+
+[ 2015-06-29T17:18:41+08:00 ] ::1 /JianKong/APP_URL?m=Home&c=Login&a=verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:APP_URL
+

@@ -26,7 +26,7 @@ class ManageUserController extends SuperController {
 		
 		try {
 			
-			$uname = I('post.uname','','intval');
+			$uname = I('post.uname','','string');
 			$upassword = I('post.upassword','','string');
 			$remark = I('post.remark','','string');
 

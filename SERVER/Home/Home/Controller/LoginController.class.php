@@ -4,7 +4,15 @@ use Think\Controller;
 class LoginController extends Controller {
 	//登陆界面
 	public function login(){
-        $this->display();
+		
+		$kind = session("kind");
+		if($kind==null||$kind==0){		//判断是否登陆
+			$this->display();
+		}else{
+			$this->redirect("Index/index");
+		}
+		
+        
     }
 	
 	//下线

@@ -1,5 +1,13 @@
 <?php
-    if(C('LAYOUT_ON')) {
+   	
+   		//修改错误返回页，让ajax请求可以用json格式正确处理错误
+    	if(IS_AJAX){
+     			header("HTTP/1.1 200 OK");
+      			$result["data"] = $e['message'];
+				echo json_encode($result);
+     			return;
+      		}
+       if(C('LAYOUT_ON')) {
         echo '{__NOLAYOUT__}';
     }
 ?>

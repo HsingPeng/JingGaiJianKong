@@ -138,7 +138,7 @@ function initTable() {
 		"iDisplayLength": 10, // 每页显示行数
 		"bAutoWidth": false, //一行显示
 		"bSort": true, // 排序,
-		"order": [[0, 'desc']], //默认ID倒序
+		"order": [[ 0, 'desc' ]],//默认降序
 		"columns": [
 			{
 				"data": "rid"
