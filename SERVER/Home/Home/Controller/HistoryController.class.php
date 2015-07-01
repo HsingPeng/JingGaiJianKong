@@ -29,7 +29,7 @@ class HistoryController extends BaseController {
 		
 		try {
 			
-			$rid = I('post.rid',0,'intval');
+			$rid = I('post.rid',0,'intval');		//获取post参数
 
 			$uid = session("uid");
 			$kind = session("kind");

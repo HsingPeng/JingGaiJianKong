@@ -40,6 +40,9 @@
 	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo (MEDIA_URL); ?>bootstrap/js/holder.min.js"></script>
+	
+	<link rel="shortcut icon" href="<?php echo (MEDIA_URL); ?>Home/images/favicon.ico" />
+	
 </head>
 
 <body>
@@ -65,7 +68,7 @@
 	<div class="container">
 		<div class="jumbotron bs-docs-section">
 			<h1>第一次运行</h1>
-			<p>第一次使用系统需要通过本页面，连接MySQL数据库，完成对系统的初始化。只需要跟着向导，即可轻松的完成操作。点击开始！</p>
+			<p>第一次使用系统需要通过本页面，连接MySQL数据库，完成对系统的初始化。只需要跟着向导，即可轻松的完成部署。点击开始！</p>
 			<p><a class="btn btn-primary btn-lg" href="#1" id="b_start">开始</a>
 			</p>
 		</div>
@@ -75,18 +78,11 @@
 			<h4>设置Thinkphp与MySQL数据库的连接</h4>
 
 			<div class="bs-callout bs-callout-danger">
-				<h4>请首先填写数据库名称，当数据库已存在则会删除重建。</h4>
-				<form class="form-inline">
-					<div class="form-group">
-						<div class="input-group">
-							<div class="input-group-addon">数据库名：</div>
-							<input type="text" class="form-control" id="db_name" placeholder="例如：jiankong">
-						</div>
-					</div>
-				</form>
-				<br>
+				<h4>系统会自动创建数据库，当数据库已存在则会删除重建。</h4>
 				<p>若创建失败可使用phpMyAdmin等工具手动创建，排序选择utf8_general_ci。</p>
-				<p>然后打开项目根目录,依次进入Home目录->Common目录->Conf目录->打开config.php。填写好MySQL数据库的用户名，密码和刚刚创建的数据库名，其他的不用更改。示例如下：</p>
+				<p>步骤：</p>
+				<p>1.打开项目根目录,依次进入Home目录->Common目录->Conf目录->打开config.php。</p>
+				<p>2.填写好MySQL数据库的用户名，密码，数据库地址和想要的数据库名，其他的一般不用更改。示例如下：</p>
 				<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">//PDO连接方式</span><br><span class="nt">'DB_TYPE'  	</span> <span class="na">=></span><span class="s">'mysql'</span>,<span class="c"> // 数据库类型</span><br><span class="nt">'DB_USER'  	</span> <span class="na">=></span><span class="s">'root'</span>,<span class="c"> // 用户名</span><br><span class="nt">'DB_PWD'   	</span> <span class="na">=></span><span class="s">'123456'</span>,<span class="c"> // 密码</span><br><span class="nt">'DB_PREFIX' 	</span> <span class="na">=></span><span class="s">''</span>,<span class="c"> // 数据库表前缀</span><br><span class="nt">'DB_DSN'    	</span> <span class="na">=></span><span class="s">'mysql:host=localhost;dbname=jiankong;charset=utf8'</span><span class="c"> // jiankong为数据库名称</span></code></pre>
 				</div>
 				<p>设置完成点击下方按钮</p>
@@ -147,13 +143,6 @@
 			location.href = 'index.php';
 		});
 		
-		$('#db_name').bind('keypress',function(event){
-            if(event.keyCode == "13")    
-            {
-                connect();
-            }
-        });
-		
 	}
 
 	function show_modal() {
@@ -165,12 +154,6 @@
 	}
 
 	function connect() {
-		
-		if($('#db_name').val()==''){
-			$('#db_name').focus();
-			return;
-		}
-		
 
 		show_modal();
 
@@ -179,9 +162,6 @@
 			type: 'post',
 			cache: false,
 			dataType: 'json',
-			data: {
-				name: $('#db_name').val(),
-			},
 			success: function (msg) {
 
 				$('#load_modal').modal('hide');
@@ -192,7 +172,7 @@
 					location.href = '#2';
 					$('#b_1').removeClass('btn-danger');
 					$('#b_1').addClass('btn-success');
-					$('#b_1,#db_name').attr("disabled", true);
+					$('#b_1').attr("disabled", true);
 					$('#step_1').addClass('completed');
 				} else {
 					alert("创建数据库表失败，请重试或手动创建！ " + msg.data);

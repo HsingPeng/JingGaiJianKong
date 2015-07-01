@@ -12,11 +12,14 @@ class SetupController extends LocalController {
 	
 	public function step_1(){
 		
-		$db_name = I("post.name",'','string');
-		if($db_name == ''){
-			$result["data"] = '数据库名不能为空';
-			$this->ajaxReturn($result, 'JSON');
+		$db_dsn = C('DB_DSN');
+		preg_match('/dbname=(.*);/i', $db_dsn, $arr);		//正则匹配取出数据库名
+		$db_dsn1 = preg_replace('/dbname=(.*);/i','information_schema',$db_dsn);		//替换成临时数据库
+		if($arr == null){
+			preg_match('/dbname=((?!;).*)$/i', $db_dsn, $arr);		//当字段在最后没有；结尾的情况
+			$db_dsn1 = preg_replace('/dbname=((?!;).*)$/i','information_schema',$db_dsn);
 		}
+		$db_name = $arr[1];
 		
 		//通过临时配置创建数据库，实际通过数据库information_schema操作
 		$DB_CONFIG1 = array(
@@ -24,7 +27,7 @@ class SetupController extends LocalController {
 			'DB_USER'  				=> C('DB_USER'),
 			'DB_PWD'   				=> C('DB_PWD'),
 			'DB_PREFIX' 			=> C('DB_PREFIX'),
-			'DB_DSN'    			=> 'mysql:host=localhost;dbname=information_schema;charset=utf8'
+			'DB_DSN'    			=> $db_dsn1
 		);
 		
 		$Model = new \Think\Model(null,'',$DB_CONFIG1);

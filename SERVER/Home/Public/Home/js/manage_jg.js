@@ -167,6 +167,7 @@ function sendUpdate() {
 	}
 }
 
+//检测输入窗口是否为空
 function checkInput() {
 
 	var flag = true;

@@ -5,9 +5,9 @@ function init() {
 
 	TABLE_COUNT = initCount(); //表格里异常数据计数器
 
-	TOP_TABLE = initTopTable();
+	TOP_TABLE = initTopTable();		//初始化表格
 
-	CONFIG = new Object();
+	CONFIG = new Object();		//创建一个变量，存储一些配置
 	CONFIG.init = 1; //默认第一次是初始化请求
 	CONFIG.updatedTime = ''; //上次更新的最新时间
 	CONFIG.status = 1; //0为意外断线
@@ -91,7 +91,7 @@ function show_load_model() {
 	//模态 窗口
 	$('#load_modal').modal({
 		show: true, //显示
-		keyboard: false, //键盘ESC
+		keyboard: false, //键盘ESC不可用
 		backdrop: 'static' //点击空白处不可关闭
 	});
 }
@@ -104,12 +104,12 @@ function getCurrent() {
 		url: "home.php?m=Home&c=GetCurrent&a=getcurrent",
 		data: {
 			data: JSON.stringify(CONFIG)
-		}, //转成JSON发送出去
-		timeout: 30000, //超时
+		}, //数据转成JSON发送出去
+		timeout: 30000, //超时时间
 		success: function (msg) {
 
-			CONFIG.status = 1;
-			setConnectStatus(1);
+			CONFIG.status = 1;			//设置状态为正常连接
+			setConnectStatus(1);		//标签设置为已连接
 
 			try {
 
@@ -121,13 +121,14 @@ function getCurrent() {
 
 				var data = msg.data;
 
-				if (data.length > 0) {
+				if (data.length > 0) {		//判断是否有数据
 					for (var y in data) {
 						var x = data[y];
-
+						//添加
 						addItem(x["id"] * 1, x["number"] * 1, x["lat"] * 1, x["lng"] * 1, x["address"], x["type"] * 1, x["time"], x["angle"] * 1, x["volt"] * 1, x["describe"]);
 					}
 
+					//是否是第一次请求
 					if (CONFIG.init) {
 						CONFIG.init = 0; //关闭初始化请求
 					}
@@ -135,33 +136,32 @@ function getCurrent() {
 				}
 
 
-
+				//表格里是否有数据，没有数据则说明没有异常
 				if (TABLE_COUNT.count === 0) {
 					changeStatus(1); //设置状态正常
 				} else {
 					changeStatus(2); //设置状态异常
 				}
 
-				CONFIG.updatedTime = msg.updatedTime;
-
+				CONFIG.updatedTime = msg.updatedTime;		//更新上次通信的时间，方便下次进行对比，拿到这段时间新的数据
 
 			} catch (e) {
 				alert("获取数据错误: " + e.name + ' ' + e.message);
 			}
 
-			getCurrent();
-			$('#load_modal').modal('hide');
+			getCurrent();			//发起新的连接
+			$('#load_modal').modal('hide');		//隐藏等待窗口
 
 		},
 		error: function (XMLHttpRequest, textStatus, errorThrown) {
 			//alert("连接服务器错误: " + textStatus + " " + errorThrown);
-			setConnectStatus(3);
-			CONFIG.status = 0;
-			$('#load_modal').modal('hide');
+			setConnectStatus(3);		//标签设置为断开连接
+			CONFIG.status = 0;			//状态设置为意外断线
+			$('#load_modal').modal('hide');		//隐藏等待窗口
 			//设置定时重试
 			setTimeout(function () {
 				getCurrent();
-				setConnectStatus(2);
+				setConnectStatus(2);		//标签设置为正在连接
 			}, 1000);
 		}
 	});
@@ -198,11 +198,12 @@ function addItem(id, number, lat, lng, address, type, time, angle, volt, describ
 	var flag = true; //是否不存在的标志,防止重复添加
 
 	if (!CONFIG.init) {
+		//遍历对比是否有重复井盖
 		TOP_TABLE.rows().every(function () {
 			var data = this.data();
 			if (data!=null && data.id == id) {
 
-				//如果由异常变成正常
+				//如果由异常变成正常，则删除该行
 				if (type === 1) {
 					this.remove().draw();
 					TABLE_COUNT.reduce();
@@ -220,6 +221,7 @@ function addItem(id, number, lat, lng, address, type, time, angle, volt, describ
 		});
 	}
 
+	//如果井盖是正常状态则不添加，结束方法
 	if (type === 1) {
 		return;
 	}

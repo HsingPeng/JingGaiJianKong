@@ -1,5 +1,6 @@
 /*添加地图上的标记*/
 function addMarker(id, lat, lng, info, type) {
+	//这边的color的参数是百度地图自带的数据
 	var color = -69;
 	var status = "丢失通信";
 	if (type === 2) {
@@ -30,6 +31,7 @@ function addMarker(id, lat, lng, info, type) {
 	var infoWindow = new BMap.InfoWindow(info, window_opts); /*创建信息窗口对象 */
 	itemlist[id]['infowindow'] = infoWindow; //添加到全局变量集合里面
 	/*addClickHandler(info, marker, openInfo);*/
+	//创建点击监听器，点击时弹出信息窗口
 	marker.addEventListener("click", function (e) {
 		openInfo(infoWindow, e);
 	});
@@ -41,8 +43,9 @@ function addMarker(id, lat, lng, info, type) {
 	}
 
 };
-/*载入项*/
+/*添加项*/
 function addItem(id, number, lat, lng, address, type, time, angle, volt, describe) {
+	//存入全局变量中，以便点击地图上的标记时，能够获取数据创建信息弹窗
 	itemlist[id] = {
 		id: id,
 		number: number,
@@ -56,18 +59,18 @@ function addItem(id, number, lat, lng, address, type, time, angle, volt, describ
 		describe: describe,
 		infowindow: null
 	};
-	addMarker(id, lat, lng, address, type);
-	addTable2(id, address, type, angle, volt, time);
+	addMarker(id, lat, lng, address, type);				//添加到地图上
+	addTable2(id, address, type, angle, volt, time);	//添加表格上
 
 }
 
-
+//把数据添加到表格中
 function addTable2(id, address, type, angle, volt, time) {
 
 	//var status = type == 1 ? "正常" : "倾斜报警";
 	var flag = true;
 
-
+	//如果不是第一次初始化，则需要对比数据，防止出现重复的井盖
 	if (!CONFIG.init) {
 		TABLE.rows().every(function () {
 			var data = this.data();
@@ -94,6 +97,7 @@ function addTable2(id, address, type, angle, volt, time) {
 
 				var result = '<span class="label label-' + color + '">' + status + '</span>';
 
+				//把地图定位到第一个井盖的位置上
 				var tr_i = this.index();
 				var tr_t = $('tbody').children('tr').eq(tr_i);
 				var td_t = tr_t.children('td').eq(2);
@@ -106,7 +110,7 @@ function addTable2(id, address, type, angle, volt, time) {
 	}
 
 
-
+	//如果井盖不存在，则在表格中创建
 	if (flag) {
 		TABLE.row.add({
 			id: id,
@@ -131,7 +135,7 @@ function locateItem(id) {
 		map.openInfoWindow(itemlist[id]["infowindow"], point); /*开启信息窗口*/
 	}
 }
-
+//获取数据
 function getCurrent() {
 
 	$.ajax({

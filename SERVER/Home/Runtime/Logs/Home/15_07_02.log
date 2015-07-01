@@ -1,0 +1,15 @@
+[ 2015-07-02T00:00:54+08:00 ] 127.0.0.1 /JianKong/home.php?m=Home&c=UpDate&a=update
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: {"type":"1","angle":"0","number":"15555215556","time":"2015-07-02 00:00:54","volt":"3.5"}
+NOTIC: [8] Undefined property: stdClass::$test C:\xampp\htdocs\JianKong\Home\Home\Controller\UpDateController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `equipment` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`safetime` FROM `equipment` WHERE ( number='15555215556' )  [ RunTime:0.0010s ]
+SQL: UPDATE `equipment` SET `id`='5',`type`='1',`time`='2015-07-02 00:00:54',`angle`='0',`volt`='3.5',`validtime`='2015-07-05 00:00:54 ' WHERE ( id='5' ) [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `record` [ RunTime:0.0040s ]
+SQL: INSERT INTO `record` (`id`,`type`,`time`,`angle`,`volt`) VALUES ('5','1','2015-07-02 00:00:54','0','3.5') [ RunTime:0.0050s ]
+
