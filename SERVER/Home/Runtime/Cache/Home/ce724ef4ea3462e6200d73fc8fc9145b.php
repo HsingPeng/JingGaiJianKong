@@ -79,7 +79,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown" id="nav_admin">
-						<a name="<?php echo (session('uid')); ?>" id="USER_ID" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+						<a name="<?php echo (session('uid')); ?>" kind="<?php echo (session('kind')); ?>" id="USER_ID" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
 							<?php if(($_SESSION['kind']) == "1"): ?>超级管理员
 								<?php else: ?>普通管理员<?php endif; ?>：<?php echo (session('uname')); ?>&nbsp;&nbsp;ID:<?php echo (session('uid')); ?>&nbsp;<span class="caret"></span>
 						</a>

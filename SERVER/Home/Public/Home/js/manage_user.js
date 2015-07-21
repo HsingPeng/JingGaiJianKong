@@ -115,7 +115,7 @@ function sendCreate() {
 			data: {
 				uname: $('#uname').val(),
 				upassword: hex_md5($('#upassword').val()),
-				remark: $('#remark').html(),
+				remark: $('#remark').val(),
 			},
 			type: 'post',
 			cache: false,
@@ -133,7 +133,7 @@ function sendCreate() {
 				if (msg.data == "success") {
 					$('#myModal').modal('hide');	//隐藏load窗口
 					TABLE.ajax.reload();		//表格重新加载数据
-					alert("添加成功！用户ID为："+msg.id);
+					alert("添加成功！用户ID为："+msg.uid);
 				} else {
 					alert("添加失败！ " + msg.data);
 				}

@@ -33,6 +33,8 @@ class ManageJGController extends BaseController {
 			$lat = I('post.lat',0,'float');
 			$address = I('post.address','','string');
 			$describe = I('post.describe','','string');
+			$maxangle = I('post.maxangle',15,'intval');
+			$minangle = I('post.minangle',0,'intval');
 			$uid = I('post.uid',0,'intval');
 			
 			if($safetime < 3600){
@@ -40,13 +42,15 @@ class ManageJGController extends BaseController {
 				$this->ajaxReturn ($result,'JSON');
 			}
 
-			$Equip = M('Equipment');
+			$Admin = M('Admin');
 			
-			/*$old_data = $Equip->where("id='%d'",array($id))->select();
-			if(count($old_data)){
-				$result["data"] = "设备ID已存在" ;
+			$exist_admin = $Admin->where("uid='%d'",array($uid))->select();
+			if(count($exist_admin) == 0){
+				$result["data"] = "该管理员不存在" ;
 				$this->ajaxReturn ($result,'JSON');
-			}*/
+			}
+			
+			$Equip = M('Equipment');
 
 			$data['safetime'] = $safetime;
 			$data['number'] = $number;
@@ -54,6 +58,8 @@ class ManageJGController extends BaseController {
 			$data['lat'] = $lat;
 			$data['address'] = $address;
 			$data['describe'] = $describe;
+			$data['maxangle'] = $maxangle;
+			$data['minangle'] = $minangle;
 			if(session("kind")!=1){
 				$uid = session("uid");
 			}
@@ -83,9 +89,26 @@ class ManageJGController extends BaseController {
 			$lat = I('post.lat',0,'float');
 			$address = I('post.address','','string');
 			$describe = I('post.describe','','string');
-			$safetime = I('post.safetime',0,'intval');
+			$safetime = I('post.safetime',259200,'intval');
+			$maxangle = I('post.maxangle',15,'intval');
+			$minangle = I('post.minangle',0,'intval');
+			
+			if($maxangle < $minangle){
+				$result["data"] = "角度上限小于角度下限！" ;
+				$this->ajaxReturn ($result,'JSON');
+			}
+			
 			if(session("kind")==1){
 				$uid = I('post.uid',0,'intval');
+				
+				$Admin = M('Admin');
+			
+				$exist_admin = $Admin->where("uid='%d'",array($uid))->select();
+				if(count($exist_admin) == 0){
+					$result["data"] = "该管理员不存在" ;
+					$this->ajaxReturn ($result,'JSON');
+				}
+				
 			}
 			
 			$Equip = M('Equipment');
@@ -102,6 +125,8 @@ class ManageJGController extends BaseController {
 			$data['address'] = $address;
 			$data['safetime'] = $safetime;
 			$data['describe'] = $describe;
+			$data['maxangle'] = $maxangle;
+			$data['minangle'] = $minangle;
 			if(session("kind")!=1){
 				$uid = session("uid");
 			}

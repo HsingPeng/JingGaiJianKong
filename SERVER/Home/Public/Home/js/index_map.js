@@ -347,7 +347,7 @@ function init() {
 	map = new BMap.Map("allmap", {
 		enableMapClick: false /*设置不可点击覆盖物*/
 	});
-	map.centerAndZoom(new BMap.Point(116.417854, 39.921988), 15);
+	map.centerAndZoom(new BMap.Point(118.780434,32.051821), 16);
 	map.enableScrollWheelZoom();
 	/*开启滚轮缩放*/
 

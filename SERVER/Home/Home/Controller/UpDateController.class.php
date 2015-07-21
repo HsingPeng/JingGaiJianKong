@@ -11,7 +11,7 @@ class UpDateController extends Controller {
 		
 		try {
 			$post_data = json_decode($GLOBALS['HTTP_RAW_POST_DATA']);		//获得数据，这里是因为APP传入的POST数据是JSON格式，不是传统的键值对，需要转换。
-			\Think\Log::record($GLOBALS['HTTP_RAW_POST_DATA']);
+			\Think\Log::record($GLOBALS['HTTP_RAW_POST_DATA']);				//写入日志
 			//判断是否是测试请求
 			if($post_data->test==="1"){
 				$result["data"] = "success" ;
@@ -25,21 +25,17 @@ class UpDateController extends Controller {
 			$angle = $post_data->angle;
 			$time = $post_data->time;
 			
-			/*$type = I('post.type',0,'intval');
-			$volt = I('post.volt',0,'float');
-			$angle = I('post.angle',0,'intval');
-			$time = I('post.time','','string');*/
-
-			
 			//实例化数据库模型
 			$Equip = M('Equipment');
 			
-			$list = $Equip->where("number='%s'",array($number))->getField('id,safetime');		//取出号码对应的井盖ID
+			$list = $Equip->where("number='%s'",array($number))->getField('id,maxangle,minangle,safetime');		//取出号码对应的井盖ID
 			
 			//这里遍历是因为不知道数据的键，无法直接取出，实际里面只有一行数据
 			foreach($list as $key => $value){
 				$id = $key;
-				$safetime = $value;
+				$maxangle = $value["maxangle"];
+				$minangle = $value["minangle"];
+				$safetime = $value["safetime"];
 			}
 			
 			//如果没有取得相应的井盖
@@ -59,8 +55,11 @@ class UpDateController extends Controller {
 				$validtime = strtotime($time) + $safetime;		//设置失效时间
 				$data['validtime'] = date("Y-m-d H:i:s ",$validtime);
 				
-			}else if($type==2){		//警告状态不需要处理
-				
+			}else if($type==2){		//警告状态
+				//安全角度内状态正常
+				if($maxangle >= $angle && $minangle <= $angle){
+					$data['type'] = 1;
+				}
 			}else{			//都不是说明数据有问题
 				$result["data"] = "数据错误" ;
 				$this->ajaxReturn ($result,'JSON');
@@ -69,9 +68,6 @@ class UpDateController extends Controller {
 			$Equip->where("id='%d'",array($id))->save($data);		//写入井盖数据库
 
 			$Record = M('Record');		//实例化记录表
-			
-			
-			$data['volt'] = $volt;
 			
 			$Record->data($data)->add();		//写入记录表
 			

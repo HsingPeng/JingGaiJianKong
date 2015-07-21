@@ -82,17 +82,21 @@ MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',AUTO_INCREMENT=1
   `address` varchar(255) NOT NULL COMMENT '地址',
   `safetime` int(11) NOT NULL COMMENT '安全间隔时间，秒',
   `uid` int(11) NOT NULL COMMENT '对应管理员',
+  `maxangle` int(11) NOT NULL COMMENT '正常角度上限',
+  `minangle` int(11) NOT NULL COMMENT '正常角度下限',
   `describe` varchar(255) DEFAULT NULL COMMENT '设备描述',
   `type` tinyint(4) NOT NULL COMMENT '1：心跳 2：倾斜报警',
   `volt` float NOT NULL COMMENT '电压',
   `angle` int(11) NOT NULL COMMENT '角度',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '通信时间',
-  `validtime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '心跳有效时间'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  `validtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '心跳有效时间'
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
  ALTER TABLE `equipment`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `number` (`number`);
 ALTER TABLE `equipment`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '设备ID',AUTO_INCREMENT=10;
+ALTER TABLE `equipment`
+ADD CONSTRAINT `uid` FOREIGN KEY (`uid`) REFERENCES `admin` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
 CREATE TABLE IF NOT EXISTS `record` (
 `rid` int(11) NOT NULL COMMENT '记录编码 自增长',
   `id` int(4) NOT NULL COMMENT '设备ID',
@@ -106,7 +110,7 @@ ALTER TABLE `record`
  ALTER TABLE `record`
 MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT COMMENT '记录编码 自增长';
 ALTER TABLE `record`
-ADD CONSTRAINT `eid` FOREIGN KEY (`id`) REFERENCES `equipment` (`id`);
+ADD CONSTRAINT `eid` FOREIGN KEY (`id`) REFERENCES `equipment` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 INSERT INTO `admin` (`uid`, `uname`, `upassword`, `kind`, `remark`) VALUES
 (100, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 1, '超级');";
 		
@@ -114,44 +118,20 @@ INSERT INTO `admin` (`uid`, `uname`, `upassword`, `kind`, `remark`) VALUES
 	}
 	
 	private function getDATA(){
-		$data = "INSERT INTO `admin` (`uid`, `uname`, `upassword`, `kind`, `remark`) VALUES
+		$data = "INSERT INTO `admin` (`uid`, `uname`, `upassword`, `kind`, `remark`) VALUES 
 (101, 'user01', 'e10adc3949ba59abbe56e057f20f883e', 2, '普通'),
 (102, 'user02', 'e10adc3949ba59abbe56e057f20f883e', 2, '普通管理员'),
 (103, 'user03', 'e10adc3949ba59abbe56e057f20f883e', 2, '');
-INSERT INTO `equipment` (`id`, `number`, `lng`, `lat`, `address`, `safetime`, `uid`, `describe`, `type`, `volt`, `angle`, `time`, `validtime`) VALUES
-(1, '13797741868', 116.417854, 39.921988, '北京市东城区王府井大街', 259200, 2, '', 1, 3.58, 0, '2015-06-29 08:40:44', '2015-06-27 16:40:20'),
-(2, '13797741867', 116.406605, 39.921585, '北京市东城区东华门大街', 259100, 3, '', 1, 3.6, 0, '2015-06-29 08:41:13', '2015-06-30 08:40:20'),
-(3, '13797741866', 116.412222, 39.912345, '北京市东城区东华门大街', 259200, 2, '', 1, 3.58, 0, '2015-06-26 14:30:26', '2015-06-26 08:40:20'),
-(4, '17365342763', 116.468375, 39.914296, '北京市, 北京市, 朝阳区, 三环', 259200, 2, '', 0, 0, 0, '2015-06-26 08:40:20', '0000-00-00 00:00:00'),
-(5, '15555215556', 116.47628, 39.903725, '北京市, 北京市, 朝阳区, 百子湾路', 259200, 2, 'fsaf', 1, 3.5, 0, '2015-06-30 09:25:39', '2015-07-03 09:25:39'),
-(10, '152376457', 116.439629, 39.915348, '北京市, 北京市, 东城区, 建国门内大街,5号', 258900, 2, '', 0, 0, 0, '2015-06-26 14:57:30', '2015-06-30 08:40:20'),
-(11, '16583748574', 116.456517, 39.915458, '北京市, 北京市, 朝阳区, 东大桥路,61号', 259100, 3, '', 2, 3, 5, '2015-06-29 09:58:10', '2015-06-29 16:00:00');
+INSERT INTO `equipment` (`id`, `number`, `lng`, `lat`, `address`, `safetime`, `uid`, `maxangle`, `minangle`, `describe`, `type`, `volt`, `angle`, `time`, `validtime`) VALUES
+(1, '15243789087', 118.799442, 32.046679, '江苏省, 南京市, 秦淮区, 中山东路,60号', 259200, 101, 15, 0, 'dfdsa', 1, 3.5, 1, '2015-07-18 09:16:14', '2015-07-22 16:00:00'),
+(2, '17535806326', 118.799155, 32.047659, '江苏省, 南京市, 玄武区, 中山东路,147号703室', 259200, 101, 15, 0, '', 0, 0, 0, '2015-07-18 09:16:20', '2015-07-18 16:00:00'),
+(5, '15555215556', 118.806269, 32.049679, '江苏省, 南京市, 玄武区, 东箭道', 259200, 101, 18, 1, '', 2, 3.5, 21, '2015-07-18 09:14:46', '2015-07-20 07:49:45');
 INSERT INTO `record` (`rid`, `id`, `type`, `volt`, `angle`, `time`) VALUES
-(6, 11, 1, 3.32, 0, '2015-06-28 15:31:03'),
-(7, 5, 2, 0, 4, '2015-06-16 17:46:39'),
-(8, 5, 1, 3.32, 0, '2015-06-16 17:46:58'),
-(9, 5, 2, 0, 4, '2015-06-16 17:52:00'),
-(10, 5, 1, 3.32, 0, '2015-06-16 17:57:34'),
-(11, 5, 2, 0, 4, '2015-06-16 18:06:16'),
-(12, 5, 1, 3.32, 0, '2015-06-16 18:07:14'),
-(13, 5, 2, 0, 4, '2015-06-16 18:15:39'),
-(14, 5, 1, 3.32, 0, '2015-06-16 18:21:38'),
-(15, 5, 2, 0, 4, '2015-06-16 18:27:36'),
-(16, 5, 1, 3.32, 0, '2015-06-16 18:27:52'),
-(18, 5, 1, 3.32, 0, '2015-06-16 18:30:47'),
-(19, 5, 1, 3.32, 0, '2015-06-16 18:32:08'),
-(20, 5, 2, 0, 4, '2015-06-16 18:35:45'),
-(21, 5, 1, 3.32, 0, '2015-06-16 18:36:33'),
-(22, 5, 2, 0, 57, '2015-06-16 18:37:49'),
-(23, 5, 1, 3.15, 0, '2015-06-16 18:38:08'),
-(24, 5, 2, 0, 57, '2015-06-17 12:07:29'),
-(25, 5, 1, 3.15, 0, '2015-06-29 16:58:24'),
-(26, 5, 2, 0, 57, '2015-06-29 17:00:52'),
-(27, 5, 1, 3.15, 0, '2015-06-29 17:01:09'),
-(28, 5, 2, 0, 57, '2015-06-29 17:01:52'),
-(29, 5, 1, 3.15, 0, '2015-06-29 17:02:21'),
-(30, 5, 1, 3.15, 0, '2015-06-29 17:12:46'),
-(54, 5, 1, 3.5, 0, '2015-06-30 09:25:39');";
+(1, 5, 1, 0, 2, '2015-07-18 07:48:18'),
+(2, 5, 1, 3.5, 0, '2015-07-18 07:49:45'),
+(3, 5, 1, 0, 18, '2015-07-18 07:50:13'),
+(4, 5, 2, 0, 22, '2015-07-18 07:50:31'),
+(5, 5, 1, 0, 11, '2015-07-18 07:50:39');";
 		return $data;
 	}
 	

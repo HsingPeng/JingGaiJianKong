@@ -63,7 +63,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown" id="nav_admin">
-						<a name="<?php echo (session('uid')); ?>" id="USER_ID" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
+						<a name="<?php echo (session('uid')); ?>" kind="<?php echo (session('kind')); ?>" id="USER_ID" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">
 							<?php if(($_SESSION['kind']) == "1"): ?>超级管理员
 								<?php else: ?>普通管理员<?php endif; ?>：<?php echo (session('uname')); ?>&nbsp;&nbsp;ID:<?php echo (session('uid')); ?>&nbsp;<span class="caret"></span>
 						</a>
@@ -83,7 +83,7 @@
 
 	<!-- /.导航 -->
 
-	<div id="table_wrapper" class=" container dataTables_wrapper" role="grid">
+	<div id="table_wrapper" class=" container-fluid dataTables_wrapper" role="grid">
 		<div class="row-fluid">
 			<div class="span6 myBtnBox"><a id="addFun" class="btn btn-primary">新增</a>
 			</div>
@@ -97,9 +97,11 @@
 					<th>经度</th>
 					<th>纬度</th>
 					<th>地址</th>
+					<th>角度上限</th>
+					<th>角度下限</th>
 					<th>心跳时间</th>
 					<th>设备描述</th>
-					<th>管理者</th>
+					<th>管理者ID</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -153,9 +155,19 @@
 							<div class="col-sm-4">
 								<input type="text" class="form-control" id="number" placeholder="请输入" onkeyup="value=this.value.replace(/\D+/g,'')">
 							</div>
-							<label for="uid" class="col-sm-2 control-label">管理者</label>
+							<label for="uid" class="col-sm-2 control-label">管理者ID</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" id="uid" placeholder="请输入" onkeyup="value=this.value.replace(/\D+/g,'')">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="maxangle" class="col-sm-2 control-label">角度上限</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="maxangle" placeholder="例如15" onkeyup="value=this.value.replace(/\D+/g,'')">
+							</div>
+							<label for="minangle" class="col-sm-2 control-label">角度下限</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="minangle" placeholder="例如0" onkeyup="value=this.value.replace(/\D+/g,'')">
 							</div>
 						</div>
 						<div class="form-group">

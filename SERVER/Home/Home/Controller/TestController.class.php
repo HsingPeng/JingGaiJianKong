@@ -3,6 +3,11 @@ namespace Home\Controller;
 use Think\Controller;
 
 class TestController extends LocalController {
+	
+	public function test(){
+		$this->display();
+	}
+	
 	public function test1(){
 		
 		$Equip = M('Equipment');

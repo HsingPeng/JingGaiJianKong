@@ -36,14 +36,17 @@ function addButton() {
 
 		MODAL = 1;
 
+		var USER_KIND = $("#USER_ID").attr("kind");
 		var USER_ID = $("#USER_ID").attr("name");
 		
 		$('#input-id').val('自动生成');
 		$("#input-id").attr("disabled", true);
 		$('#safetime').val('');
 		$('#number').val('');
+		$('#maxangle').val('');
+		$('#minangle').val('');
 		$('#uid').val(USER_ID);
-		if(USER_ID!=1){
+		if(USER_KIND!=1){
 			$("#uid").attr("disabled", true);
 		}
 		$('#lng').text('点击地图自动获取');
@@ -80,6 +83,8 @@ function sendCreate() {
 				safetime: $('#safetime').val(),
 				number: $('#number').val(),
 				uid: $('#uid').val(),
+				maxangle: $('#maxangle').val(),
+				minangle: $('#minangle').val(),
 				lng: $('#lng').html(),
 				lat: $('#lat').html(),
 				address: $('#address').val(),
@@ -130,6 +135,8 @@ function sendUpdate() {
 				id: $('#input-id').val(),
 				number: $('#number').val(),
 				uid: $('#uid').val(),
+				maxangle: $('#maxangle').val(),
+				minangle: $('#minangle').val(),
 				lng: $('#lng').html(),
 				lat: $('#lat').html(),
 				safetime:$('#safetime').val(),
@@ -184,6 +191,12 @@ function checkInput() {
 		//alert("uid未填写");
 		$('#uid').focus();
 		flag = false;
+	}else if ($('#maxangle').val() == '') {
+		$('#maxangle').focus();
+		flag = false;
+	}else if ($('#minangle').val() == '') {
+		$('#minangle').focus();
+		flag = false;
 	}else if ($('#address').val() == '') {
 		$('#address').focus();
 		flag = false;
@@ -207,7 +220,7 @@ function initMap() {
 	map = new BMap.Map("allmap", {
 		enableMapClick: false /*设置不可点击覆盖物*/
 	});
-	map.centerAndZoom(new BMap.Point(116.417854, 39.921988), 15);
+	map.centerAndZoom(new BMap.Point(118.780434,32.051821), 16);
 	/*map.enableScrollWheelZoom();*/
 	/*开启滚轮缩放*/
 
@@ -275,6 +288,12 @@ function initTable() {
 				"data": "address"
 			},
 			{
+				"data": "maxangle"
+			},
+			{
+				"data": "minangle"
+			},
+			{
 				"data": "safetime"
 			},
 			{
@@ -288,7 +307,7 @@ function initTable() {
 			"render": function (data, type, row) {
 				return '<a href="#" class="btn btn-primary" id="editFun">修改</a> ' + '&nbsp;' + '<a href="#" class="btn btn-danger" id="deleteFun">删除</a>' + '&nbsp;';
 			},
-			"targets": 8
+			"targets": 10
       }],
 	});
 	return table;
@@ -307,11 +326,13 @@ function addClick() {
 		$('#safetime').val(row.data().safetime);
 		$('#number').val(row.data().number);
 		$('#uid').val(row.data().uid);
-		if($("#USER_ID").attr("name")!=1){
+		if($("#USER_ID").attr("kind")!=1){
 			$("#uid").attr("disabled", true);
 		}
 		$('#lng').text(row.data().lng);
 		$('#lat').text(row.data().lat);
+		$('#maxangle').val(row.data().maxangle);
+		$('#minangle').val(row.data().minangle);
 		$('#address').val(row.data().address);
 		$('#describe').val(row.data().describe);
 

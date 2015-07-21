@@ -110,12 +110,11 @@ class GetCurrentController extends BaseController {
 		$length = count($data);				//取出数组长度，方便遍历数组
 		for($i=0 ; $i<$length ; $i++){
 			
-			if($data[$i]['type']==1){								//当数据是1表示设备正常，则需要判断是否丢失通信
 				$validtime = strtotime($data[$i]['validtime']);		//取出井盖的安全时间期限，即最后有效的时间，超过时间即过期
 				$gap_time = time() - $validtime ;
 				if($gap_time > 0){									//若间隔时间是正的，代表已经过期
 					$data[$i]['type']=0;							//更改为过期，0通信丢失
-				}
+
 			}
 		}
 		return $data ;
